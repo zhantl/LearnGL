@@ -1,0 +1,5 @@
+D:/vscode_test/3rdparty/src/freetype-2.10.0/bulid/CMakeFiles/PACKAGE.dir
+D:/vscode_test/3rdparty/src/freetype-2.10.0/bulid/CMakeFiles/freetype.dir
+D:/vscode_test/3rdparty/src/freetype-2.10.0/bulid/CMakeFiles/INSTALL.dir
+D:/vscode_test/3rdparty/src/freetype-2.10.0/bulid/CMakeFiles/ALL_BUILD.dir
+D:/vscode_test/3rdparty/src/freetype-2.10.0/bulid/CMakeFiles/ZERO_CHECK.dir

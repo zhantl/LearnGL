@@ -1,0 +1,2 @@
+#TargetFrameworkVersion=v4.0:PlatformToolSet=v140:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit:WindowsTargetPlatformVersion=8.1
+RelWithDebInfo|x64|D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\|

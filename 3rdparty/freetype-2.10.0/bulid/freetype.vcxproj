@@ -1,0 +1,386 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{21F10F4B-8010-3A9A-A949-211DE393D0B1}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>freetype</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">freetype.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">freetyped</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">freetype.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">freetype</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">freetype.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">freetype</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">freetype.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">freetype</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\include;D:\vscode_test\3rdparty\src\freetype-2.10.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsC</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;FT2_BUILD_LIBRARY;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;FT2_BUILD_LIBRARY;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\include;D:\vscode_test\3rdparty\src\freetype-2.10.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\include;D:\vscode_test\3rdparty\src\freetype-2.10.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\include;D:\vscode_test\3rdparty\src\freetype-2.10.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsC</CompileAs>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;FT2_BUILD_LIBRARY;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;FT2_BUILD_LIBRARY;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\include;D:\vscode_test\3rdparty\src\freetype-2.10.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\include;D:\vscode_test\3rdparty\src\freetype-2.10.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\include;D:\vscode_test\3rdparty\src\freetype-2.10.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <CompileAs>CompileAsC</CompileAs>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;FT2_BUILD_LIBRARY;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;FT2_BUILD_LIBRARY;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\include;D:\vscode_test\3rdparty\src\freetype-2.10.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\include;D:\vscode_test\3rdparty\src\freetype-2.10.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\include;D:\vscode_test\3rdparty\src\freetype-2.10.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsC</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;FT2_BUILD_LIBRARY;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;FT2_BUILD_LIBRARY;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\include;D:\vscode_test\3rdparty\src\freetype-2.10.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\include;D:\vscode_test\3rdparty\src\freetype-2.10.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/vscode_test/3rdparty/src/freetype-2.10.0/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HD:/vscode_test/3rdparty/src/freetype-2.10.0 -BD:/vscode_test/3rdparty/src/freetype-2.10.0/bulid --check-stamp-file D:/vscode_test/3rdparty/src/freetype-2.10.0/bulid/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:/vscode_test/3rdparty/src/freetype-2.10.0/CMakeLists.txt;D:\vscode_test\3rdparty\src\freetype-2.10.0\CMakeLists.txt;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CheckIncludeFile.cmake;D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\CMakeFiles\3.11.3\CMakeSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CMakeSystemSpecificInitialize.cmake;D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\CMakeFiles\3.11.3\CMakeCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CMakeGenericSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CMakeInitializeConfigs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\Platform\Windows.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\Platform\WindowsPaths.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CMakeCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CMakeLanguageInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\Platform\Windows-MSVC.cmake;D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\CMakeFiles\3.11.3\CMakeRCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CMakeRCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CMakeCommonLanguageInclude.cmake;D:\vscode_test\3rdparty\src\freetype-2.10.0\builds\cmake\FindHarfBuzz.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPkgConfig.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPNG.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindZLIB.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\SelectLibraryConfigurations.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindZLIB.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\SelectLibraryConfigurations.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindBZip2.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\SelectLibraryConfigurations.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\GNUInstallDirs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CPack.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CPackComponent.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Templates\CPackConfig.cmake.in;C:\Program Files (x86)\CMake\share\cmake-3.11\Templates\CPackConfig.cmake.in;D:\vscode_test\3rdparty\src\freetype-2.10.0\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/vscode_test/3rdparty/src/freetype-2.10.0/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HD:/vscode_test/3rdparty/src/freetype-2.10.0 -BD:/vscode_test/3rdparty/src/freetype-2.10.0/bulid --check-stamp-file D:/vscode_test/3rdparty/src/freetype-2.10.0/bulid/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:/vscode_test/3rdparty/src/freetype-2.10.0/CMakeLists.txt;D:\vscode_test\3rdparty\src\freetype-2.10.0\CMakeLists.txt;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CheckIncludeFile.cmake;D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\CMakeFiles\3.11.3\CMakeSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CMakeSystemSpecificInitialize.cmake;D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\CMakeFiles\3.11.3\CMakeCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CMakeGenericSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CMakeInitializeConfigs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\Platform\Windows.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\Platform\WindowsPaths.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CMakeCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CMakeLanguageInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\Platform\Windows-MSVC.cmake;D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\CMakeFiles\3.11.3\CMakeRCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CMakeRCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CMakeCommonLanguageInclude.cmake;D:\vscode_test\3rdparty\src\freetype-2.10.0\builds\cmake\FindHarfBuzz.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPkgConfig.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPNG.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindZLIB.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\SelectLibraryConfigurations.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindZLIB.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\SelectLibraryConfigurations.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindBZip2.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\SelectLibraryConfigurations.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\GNUInstallDirs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CPack.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CPackComponent.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Templates\CPackConfig.cmake.in;C:\Program Files (x86)\CMake\share\cmake-3.11\Templates\CPackConfig.cmake.in;D:\vscode_test\3rdparty\src\freetype-2.10.0\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/vscode_test/3rdparty/src/freetype-2.10.0/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HD:/vscode_test/3rdparty/src/freetype-2.10.0 -BD:/vscode_test/3rdparty/src/freetype-2.10.0/bulid --check-stamp-file D:/vscode_test/3rdparty/src/freetype-2.10.0/bulid/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:/vscode_test/3rdparty/src/freetype-2.10.0/CMakeLists.txt;D:\vscode_test\3rdparty\src\freetype-2.10.0\CMakeLists.txt;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CheckIncludeFile.cmake;D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\CMakeFiles\3.11.3\CMakeSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CMakeSystemSpecificInitialize.cmake;D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\CMakeFiles\3.11.3\CMakeCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CMakeGenericSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CMakeInitializeConfigs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\Platform\Windows.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\Platform\WindowsPaths.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CMakeCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CMakeLanguageInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\Platform\Windows-MSVC.cmake;D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\CMakeFiles\3.11.3\CMakeRCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CMakeRCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CMakeCommonLanguageInclude.cmake;D:\vscode_test\3rdparty\src\freetype-2.10.0\builds\cmake\FindHarfBuzz.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPkgConfig.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPNG.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindZLIB.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\SelectLibraryConfigurations.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindZLIB.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\SelectLibraryConfigurations.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindBZip2.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\SelectLibraryConfigurations.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\GNUInstallDirs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CPack.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CPackComponent.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Templates\CPackConfig.cmake.in;C:\Program Files (x86)\CMake\share\cmake-3.11\Templates\CPackConfig.cmake.in;D:\vscode_test\3rdparty\src\freetype-2.10.0\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/vscode_test/3rdparty/src/freetype-2.10.0/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HD:/vscode_test/3rdparty/src/freetype-2.10.0 -BD:/vscode_test/3rdparty/src/freetype-2.10.0/bulid --check-stamp-file D:/vscode_test/3rdparty/src/freetype-2.10.0/bulid/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:/vscode_test/3rdparty/src/freetype-2.10.0/CMakeLists.txt;D:\vscode_test\3rdparty\src\freetype-2.10.0\CMakeLists.txt;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CheckIncludeFile.cmake;D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\CMakeFiles\3.11.3\CMakeSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CMakeSystemSpecificInitialize.cmake;D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\CMakeFiles\3.11.3\CMakeCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CMakeGenericSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CMakeInitializeConfigs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\Platform\Windows.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\Platform\WindowsPaths.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CMakeCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CMakeLanguageInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\Platform\Windows-MSVC.cmake;D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\CMakeFiles\3.11.3\CMakeRCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CMakeRCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CMakeCommonLanguageInclude.cmake;D:\vscode_test\3rdparty\src\freetype-2.10.0\builds\cmake\FindHarfBuzz.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPkgConfig.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPNG.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindZLIB.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\SelectLibraryConfigurations.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindZLIB.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\SelectLibraryConfigurations.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindBZip2.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\SelectLibraryConfigurations.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\GNUInstallDirs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CPack.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CPackComponent.cmake;C:\Program Files (x86)\CMake\share\cmake-3.11\Templates\CPackConfig.cmake.in;C:\Program Files (x86)\CMake\share\cmake-3.11\Templates\CPackConfig.cmake.in;D:\vscode_test\3rdparty\src\freetype-2.10.0\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\ft2build.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\freetype.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\ftadvanc.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\ftbbox.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\ftbdf.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\ftbitmap.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\ftbzip2.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\ftcache.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\ftchapters.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\ftcid.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\ftcolor.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\ftdriver.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\fterrdef.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\fterrors.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\ftfntfmt.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\ftgasp.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\ftglyph.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\ftgxval.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\ftgzip.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\ftimage.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\ftincrem.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\ftlcdfil.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\ftlist.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\ftlzw.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\ftmac.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\ftmm.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\ftmodapi.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\ftmoderr.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\ftotval.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\ftoutln.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\ftparams.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\ftpfr.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\ftrender.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\ftsizes.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\ftsnames.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\ftstroke.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\ftsynth.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\ftsystem.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\fttrigon.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\fttypes.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\ftwinfnt.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\t1tables.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\ttnameid.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\tttables.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\tttags.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\config\ftconfig.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\config\ftheader.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\config\ftmodule.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\config\ftoption.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\config\ftstdlib.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\internal\autohint.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\internal\cffotypes.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\internal\cfftypes.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\internal\ftcalc.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\internal\ftdebug.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\internal\ftdrv.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\internal\ftgloadr.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\internal\fthash.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\internal\ftmemory.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\internal\ftobjs.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\internal\ftpsprop.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\internal\ftrfork.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\internal\ftserv.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\internal\ftstream.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\internal\fttrace.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\internal\ftvalid.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\internal\internal.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\internal\psaux.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\internal\pshints.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\internal\sfnt.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\internal\t1types.h" />
+    <ClInclude Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\include\freetype\internal\tttypes.h" />
+    <ClCompile Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\src\autofit\autofit.c" />
+    <ClCompile Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\src\base\ftbase.c" />
+    <ClCompile Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\src\base\ftbbox.c" />
+    <ClCompile Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\src\base\ftbdf.c" />
+    <ClCompile Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\src\base\ftbitmap.c" />
+    <ClCompile Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\src\base\ftcid.c" />
+    <ClCompile Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\src\base\ftfstype.c" />
+    <ClCompile Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\src\base\ftgasp.c" />
+    <ClCompile Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\src\base\ftglyph.c" />
+    <ClCompile Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\src\base\ftgxval.c" />
+    <ClCompile Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\src\base\ftinit.c" />
+    <ClCompile Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\src\base\ftmm.c" />
+    <ClCompile Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\src\base\ftotval.c" />
+    <ClCompile Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\src\base\ftpatent.c" />
+    <ClCompile Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\src\base\ftpfr.c" />
+    <ClCompile Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\src\base\ftstroke.c" />
+    <ClCompile Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\src\base\ftsynth.c" />
+    <ClCompile Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\src\base\ftsystem.c" />
+    <ClCompile Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\src\base\fttype1.c" />
+    <ClCompile Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\src\base\ftwinfnt.c" />
+    <ClCompile Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\src\bdf\bdf.c" />
+    <ClCompile Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\src\bzip2\ftbzip2.c" />
+    <ClCompile Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\src\cache\ftcache.c" />
+    <ClCompile Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\src\cff\cff.c" />
+    <ClCompile Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\src\cid\type1cid.c" />
+    <ClCompile Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\src\gzip\ftgzip.c" />
+    <ClCompile Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\src\lzw\ftlzw.c" />
+    <ClCompile Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\src\pcf\pcf.c" />
+    <ClCompile Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\src\pfr\pfr.c" />
+    <ClCompile Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\src\psaux\psaux.c" />
+    <ClCompile Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\src\pshinter\pshinter.c" />
+    <ClCompile Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\src\psnames\psnames.c" />
+    <ClCompile Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\src\raster\raster.c" />
+    <ClCompile Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\src\sfnt\sfnt.c" />
+    <ClCompile Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\src\smooth\smooth.c" />
+    <ClCompile Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\src\truetype\truetype.c" />
+    <ClCompile Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\src\type1\type1.c" />
+    <ClCompile Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\src\type42\type42.c" />
+    <ClCompile Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\src\winfonts\winfnt.c" />
+    <ClCompile Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\builds\windows\ftdebug.c" />
+    <ResourceCompile Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\src\base\ftver.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\ZERO_CHECK.vcxproj">
+      <Project>{BC271E54-B3C1-3E51-BCF1-963E8E42ED4E}</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,44 @@
+# CMake generation dependency list for this directory.
+D:/vscode_test/3rdparty/src/freetype-2.10.0/CMakeLists.txt
+C:/Program Files (x86)/CMake/share/cmake-3.11/Modules/CheckIncludeFile.cmake
+D:/vscode_test/3rdparty/src/freetype-2.10.0/bulid/CMakeFiles/3.11.3/CMakeSystem.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.11/Modules/CMakeSystemSpecificInitialize.cmake
+D:/vscode_test/3rdparty/src/freetype-2.10.0/bulid/CMakeFiles/3.11.3/CMakeCCompiler.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.11/Modules/CMakeSystemSpecificInformation.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.11/Modules/CMakeGenericSystem.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.11/Modules/CMakeInitializeConfigs.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.11/Modules/Platform/Windows.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.11/Modules/Platform/WindowsPaths.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.11/Modules/CMakeCInformation.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.11/Modules/CMakeLanguageInformation.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.11/Modules/Platform/Windows-MSVC-C.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.11/Modules/Platform/Windows-MSVC.cmake
+D:/vscode_test/3rdparty/src/freetype-2.10.0/bulid/CMakeFiles/3.11.3/CMakeRCCompiler.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.11/Modules/CMakeRCInformation.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.11/Modules/CMakeCommonLanguageInclude.cmake
+D:/vscode_test/3rdparty/src/freetype-2.10.0/builds/cmake/FindHarfBuzz.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.11/Modules/FindPkgConfig.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.11/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.11/Modules/FindPackageMessage.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.11/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.11/Modules/FindPackageMessage.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.11/Modules/FindPNG.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.11/Modules/FindZLIB.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.11/Modules/SelectLibraryConfigurations.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.11/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.11/Modules/FindPackageMessage.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.11/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.11/Modules/FindPackageMessage.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.11/Modules/FindZLIB.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.11/Modules/SelectLibraryConfigurations.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.11/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.11/Modules/FindPackageMessage.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.11/Modules/FindBZip2.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.11/Modules/SelectLibraryConfigurations.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.11/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.11/Modules/FindPackageMessage.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.11/Modules/GNUInstallDirs.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.11/Modules/CPack.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.11/Modules/CPackComponent.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.11/Templates/CPackConfig.cmake.in
+C:/Program Files (x86)/CMake/share/cmake-3.11/Templates/CPackConfig.cmake.in

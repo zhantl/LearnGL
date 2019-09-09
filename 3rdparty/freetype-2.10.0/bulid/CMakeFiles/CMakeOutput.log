@@ -1,0 +1,124 @@
+The system is: Windows - 6.1.7601 - AMD64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler:  
+Build flags: 
+Id flags:  
+
+The output was:
+0
+Microsoft (R) Éú³ÉÒıÇæ°æ±¾ 14.0.25420.1
+°æÈ¨ËùÓĞ(C) Microsoft Corporation¡£±£ÁôËùÓĞÈ¨Àû¡£
+
+Éú³ÉÆô¶¯Ê±¼äÎª 2019/8/15 10:16:39¡£
+½Úµã 1 ÉÏµÄÏîÄ¿¡°D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\CMakeFiles\3.11.3\CompilerIdC\CompilerIdC.vcxproj¡±(Ä¬ÈÏÄ¿±ê)¡£
+PrepareForBuild:
+  ÕıÔÚ´´½¨Ä¿Â¼¡°Debug\¡±¡£
+  ÕıÔÚ´´½¨Ä¿Â¼¡°Debug\CompilerIdC.tlog\¡±¡£
+InitializeBuildStatus:
+  ÕıÔÚ´´½¨¡°Debug\CompilerIdC.tlog\unsuccessfulbuild¡±£¬ÒòÎªÒÑÖ¸¶¨¡°AlwaysCreate¡±¡£
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /nologo /W0 /WX- /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TC /errorReport:queue CMakeCCompilerId.c
+  CMakeCCompilerId.c
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:".\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\CompilerIdC.lib" /MACHINE:X64 Debug\CMakeCCompilerId.obj
+  CompilerIdC.vcxproj -> D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\CMakeFiles\3.11.3\CompilerIdC\.\CompilerIdC.exe
+PostBuildEvent:
+  for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+  :VCEnd
+  CMAKE_C_COMPILER=C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\cl.exe
+FinalizeBuildStatus:
+  ÕıÔÚÉ¾³ıÎÄ¼ş¡°Debug\CompilerIdC.tlog\unsuccessfulbuild¡±¡£
+  ÕıÔÚ¶Ô¡°Debug\CompilerIdC.tlog\CompilerIdC.lastbuildstate¡±Ö´ĞĞ Touch ÈÎÎñ¡£
+ÒÑÍê³ÉÉú³ÉÏîÄ¿¡°D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\CMakeFiles\3.11.3\CompilerIdC\CompilerIdC.vcxproj¡±(Ä¬ÈÏÄ¿±ê)µÄ²Ù×÷¡£
+
+ÒÑ³É¹¦Éú³É¡£
+    0 ¸ö¾¯¸æ
+    0 ¸ö´íÎó
+
+ÒÑÓÃÊ±¼ä 00:00:01.38
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+
+The C compiler identification is MSVC, found in "D:/vscode_test/3rdparty/src/freetype-2.10.0/bulid/CMakeFiles/3.11.3/CompilerIdC/CompilerIdC.exe"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: D:/vscode_test/3rdparty/src/freetype-2.10.0/bulid/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_2a61f.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) ç”Ÿæˆå¼•æ“ç‰ˆæœ¬ 14.0.25420.1
+ç‰ˆæƒæ‰€æœ‰(C) Microsoft Corporationã€‚ä¿ç•™æ‰€æœ‰æƒåˆ©ã€‚
+
+ç”Ÿæˆå¯åŠ¨æ—¶é—´ä¸º 2019/8/15 10:16:41ã€‚
+èŠ‚ç‚¹ 1 ä¸Šçš„é¡¹ç›®â€œD:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\CMakeFiles\CMakeTmp\cmTC_2a61f.vcxprojâ€(é»˜è®¤ç›®æ ‡)ã€‚
+PrepareForBuild:
+  æ­£åœ¨åˆ›å»ºç›®å½•â€œcmTC_2a61f.dir\Debug\â€ã€‚
+  æ­£åœ¨åˆ›å»ºç›®å½•â€œD:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\CMakeFiles\CMakeTmp\Debug\â€ã€‚
+  æ­£åœ¨åˆ›å»ºç›®å½•â€œcmTC_2a61f.dir\Debug\cmTC_2a61f.tlog\â€ã€‚
+InitializeBuildStatus:
+  æ­£åœ¨åˆ›å»ºâ€œcmTC_2a61f.dir\Debug\cmTC_2a61f.tlog\unsuccessfulbuildâ€ï¼Œå› ä¸ºå·²æŒ‡å®šâ€œAlwaysCreateâ€ã€‚
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_2a61f.dir\Debug\\" /Fd"cmTC_2a61f.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue "D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\CMakeFiles\CMakeTmp\testCCompiler.c"
+  ç”¨äº x64 çš„ Microsoft (R) C/C++ ä¼˜åŒ–ç¼–è¯‘å™¨ 19.00.24215.1 ç‰ˆ
+  ç‰ˆæƒæ‰€æœ‰(C) Microsoft Corporationã€‚ä¿ç•™æ‰€æœ‰æƒåˆ©ã€‚
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_2a61f.dir\Debug\\" /Fd"cmTC_2a61f.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue "D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\CMakeFiles\CMakeTmp\testCCompiler.c"
+  
+  testCCompiler.c
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:"D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\CMakeFiles\CMakeTmp\Debug\cmTC_2a61f.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/vscode_test/3rdparty/src/freetype-2.10.0/bulid/CMakeFiles/CMakeTmp/Debug/cmTC_2a61f.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/vscode_test/3rdparty/src/freetype-2.10.0/bulid/CMakeFiles/CMakeTmp/Debug/cmTC_2a61f.lib" /MACHINE:X64  /machine:x64 cmTC_2a61f.dir\Debug\testCCompiler.obj
+  cmTC_2a61f.vcxproj -> D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\CMakeFiles\CMakeTmp\Debug\cmTC_2a61f.exe
+  cmTC_2a61f.vcxproj -> D:/vscode_test/3rdparty/src/freetype-2.10.0/bulid/CMakeFiles/CMakeTmp/Debug/cmTC_2a61f.pdb (Full PDB)
+FinalizeBuildStatus:
+  æ­£åœ¨åˆ é™¤æ–‡ä»¶â€œcmTC_2a61f.dir\Debug\cmTC_2a61f.tlog\unsuccessfulbuildâ€ã€‚
+  æ­£åœ¨å¯¹â€œcmTC_2a61f.dir\Debug\cmTC_2a61f.tlog\cmTC_2a61f.lastbuildstateâ€æ‰§è¡Œ Touch ä»»åŠ¡ã€‚
+å·²å®Œæˆç”Ÿæˆé¡¹ç›®â€œD:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\CMakeFiles\CMakeTmp\cmTC_2a61f.vcxprojâ€(é»˜è®¤ç›®æ ‡)çš„æ“ä½œã€‚
+
+å·²æˆåŠŸç”Ÿæˆã€‚
+    0 ä¸ªè­¦å‘Š
+    0 ä¸ªé”™è¯¯
+
+å·²ç”¨æ—¶é—´ 00:00:01.14
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: D:/vscode_test/3rdparty/src/freetype-2.10.0/bulid/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_2aa7d.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) ç”Ÿæˆå¼•æ“ç‰ˆæœ¬ 14.0.25420.1
+ç‰ˆæƒæ‰€æœ‰(C) Microsoft Corporationã€‚ä¿ç•™æ‰€æœ‰æƒåˆ©ã€‚
+
+ç”Ÿæˆå¯åŠ¨æ—¶é—´ä¸º 2019/8/15 10:16:42ã€‚
+èŠ‚ç‚¹ 1 ä¸Šçš„é¡¹ç›®â€œD:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\CMakeFiles\CMakeTmp\cmTC_2aa7d.vcxprojâ€(é»˜è®¤ç›®æ ‡)ã€‚
+PrepareForBuild:
+  æ­£åœ¨åˆ›å»ºç›®å½•â€œcmTC_2aa7d.dir\Debug\â€ã€‚
+  æ­£åœ¨åˆ›å»ºç›®å½•â€œD:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\CMakeFiles\CMakeTmp\Debug\â€ã€‚
+  æ­£åœ¨åˆ›å»ºç›®å½•â€œcmTC_2aa7d.dir\Debug\cmTC_2aa7d.tlog\â€ã€‚
+InitializeBuildStatus:
+  æ­£åœ¨åˆ›å»ºâ€œcmTC_2aa7d.dir\Debug\cmTC_2aa7d.tlog\unsuccessfulbuildâ€ï¼Œå› ä¸ºå·²æŒ‡å®šâ€œAlwaysCreateâ€ã€‚
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_2aa7d.dir\Debug\\" /Fd"cmTC_2aa7d.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue "C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CMakeCCompilerABI.c"
+  ç”¨äº x64 çš„ Microsoft (R) C/C++ ä¼˜åŒ–ç¼–è¯‘å™¨ 19.00.24215.1 ç‰ˆ
+  ç‰ˆæƒæ‰€æœ‰(C) Microsoft Corporationã€‚ä¿ç•™æ‰€æœ‰æƒåˆ©ã€‚
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_2aa7d.dir\Debug\\" /Fd"cmTC_2aa7d.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue "C:\Program Files (x86)\CMake\share\cmake-3.11\Modules\CMakeCCompilerABI.c"
+  
+  CMakeCCompilerABI.c
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:"D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\CMakeFiles\CMakeTmp\Debug\cmTC_2aa7d.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/vscode_test/3rdparty/src/freetype-2.10.0/bulid/CMakeFiles/CMakeTmp/Debug/cmTC_2aa7d.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/vscode_test/3rdparty/src/freetype-2.10.0/bulid/CMakeFiles/CMakeTmp/Debug/cmTC_2aa7d.lib" /MACHINE:X64  /machine:x64 cmTC_2aa7d.dir\Debug\CMakeCCompilerABI.obj
+  cmTC_2aa7d.vcxproj -> D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\CMakeFiles\CMakeTmp\Debug\cmTC_2aa7d.exe
+  cmTC_2aa7d.vcxproj -> D:/vscode_test/3rdparty/src/freetype-2.10.0/bulid/CMakeFiles/CMakeTmp/Debug/cmTC_2aa7d.pdb (Full PDB)
+FinalizeBuildStatus:
+  æ­£åœ¨åˆ é™¤æ–‡ä»¶â€œcmTC_2aa7d.dir\Debug\cmTC_2aa7d.tlog\unsuccessfulbuildâ€ã€‚
+  æ­£åœ¨å¯¹â€œcmTC_2aa7d.dir\Debug\cmTC_2aa7d.tlog\cmTC_2aa7d.lastbuildstateâ€æ‰§è¡Œ Touch ä»»åŠ¡ã€‚
+å·²å®Œæˆç”Ÿæˆé¡¹ç›®â€œD:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\CMakeFiles\CMakeTmp\cmTC_2aa7d.vcxprojâ€(é»˜è®¤ç›®æ ‡)çš„æ“ä½œã€‚
+
+å·²æˆåŠŸç”Ÿæˆã€‚
+    0 ä¸ªè­¦å‘Š
+    0 ä¸ªé”™è¯¯
+
+å·²ç”¨æ—¶é—´ 00:00:00.81
+
+

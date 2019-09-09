@@ -1,0 +1,79 @@
+﻿  Building Custom Rule D:/vscode_test/3rdparty/src/freetype-2.10.0/CMakeLists.txt
+  CMake does not need to re-run because D:/vscode_test/3rdparty/src/freetype-2.10.0/bulid/CMakeFiles/generate.stamp is up-to-date.
+  autofit.c
+d:\vscode_test\3rdparty\src\freetype-2.10.0\src\autofit\afscript.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\vscode_test\3rdparty\src\freetype-2.10.0\src\autofit\afblue.c : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\vscode_test\3rdparty\src\freetype-2.10.0\src\autofit\afblue.c(257): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\vscode_test\3rdparty\src\freetype-2.10.0\src\autofit\afscript.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\vscode_test\3rdparty\src\freetype-2.10.0\src\autofit\afscript.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\vscode_test\3rdparty\src\freetype-2.10.0\src\autofit\afscript.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\vscode_test\3rdparty\src\freetype-2.10.0\src\autofit\afscript.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\vscode_test\3rdparty\src\freetype-2.10.0\src\autofit\afscript.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  ftbase.c
+  ftbbox.c
+  ftbdf.c
+  ftbitmap.c
+  ftcid.c
+  ftfstype.c
+  ftgasp.c
+  ftglyph.c
+  ftgxval.c
+  ftinit.c
+  ftmm.c
+  ftotval.c
+  ftpatent.c
+  ftpfr.c
+  ftstroke.c
+  ftsynth.c
+  ftsystem.c
+  fttype1.c
+  ftwinfnt.c
+  正在生成代码...
+  正在编译...
+  bdf.c
+  ftbzip2.c
+  ftcache.c
+  cff.c
+  type1cid.c
+  ftgzip.c
+  ftlzw.c
+  pcf.c
+  pfr.c
+  psaux.c
+d:\vscode_test\3rdparty\src\freetype-2.10.0\src\psaux\psintrp.c(1005): warning C4267: “=”: 从“size_t”转换到“FT_Fast”，可能丢失数据
+  pshinter.c
+  psnames.c
+  raster.c
+  sfnt.c
+d:\vscode_test\3rdparty\src\freetype-2.10.0\src\sfnt\sfdriver.c(846): warning C4267: “=”: 从“size_t”转换到“FT_UInt”，可能丢失数据
+d:\vscode_test\3rdparty\src\freetype-2.10.0\src\sfnt\sfdriver.c(997): warning C4244: “函数”: 从“__int64”转换到“const unsigned int”，可能丢失数据
+d:\vscode_test\3rdparty\src\freetype-2.10.0\src\sfnt\ttcolr.c(128): warning C4018: “>”: 有符号/无符号不匹配
+d:\vscode_test\3rdparty\src\freetype-2.10.0\src\sfnt\ttcolr.c(136): warning C4018: “>”: 有符号/无符号不匹配
+d:\vscode_test\3rdparty\src\freetype-2.10.0\src\sfnt\ttcpal.c(121): warning C4018: “>”: 有符号/无符号不匹配
+d:\vscode_test\3rdparty\src\freetype-2.10.0\src\sfnt\ttcpal.c(154): warning C4018: “>”: 有符号/无符号不匹配
+d:\vscode_test\3rdparty\src\freetype-2.10.0\src\sfnt\ttcpal.c(175): warning C4018: “>”: 有符号/无符号不匹配
+d:\vscode_test\3rdparty\src\freetype-2.10.0\src\sfnt\ttcpal.c(196): warning C4018: “>”: 有符号/无符号不匹配
+d:\vscode_test\3rdparty\src\freetype-2.10.0\src\sfnt\ttload.c : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  smooth.c
+d:\vscode_test\3rdparty\src\freetype-2.10.0\src\smooth\ftgrays.c(1700): warning C4267: “+=”: 从“size_t”转换到“TCoord”，可能丢失数据
+  truetype.c
+d:\vscode_test\3rdparty\src\freetype-2.10.0\src\truetype\ttgload.c(1817): warning C4312: “类型转换”: 从“unsigned long”转换到更大的“void *”
+d:\vscode_test\3rdparty\src\freetype-2.10.0\src\truetype\ttobjs.c(1035): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  type1.c
+d:\vscode_test\3rdparty\src\freetype-2.10.0\src\type1\t1driver.c(277): warning C4267: “=”: 从“size_t”转换到“FT_ULong”，可能丢失数据
+d:\vscode_test\3rdparty\src\freetype-2.10.0\src\type1\t1driver.c(298): warning C4267: “=”: 从“size_t”转换到“FT_ULong”，可能丢失数据
+d:\vscode_test\3rdparty\src\freetype-2.10.0\src\type1\t1driver.c(330): warning C4267: “=”: 从“size_t”转换到“FT_ULong”，可能丢失数据
+d:\vscode_test\3rdparty\src\freetype-2.10.0\src\type1\t1driver.c(360): warning C4267: “=”: 从“size_t”转换到“FT_UInt”，可能丢失数据
+d:\vscode_test\3rdparty\src\freetype-2.10.0\src\type1\t1driver.c(569): warning C4267: “=”: 从“size_t”转换到“FT_ULong”，可能丢失数据
+d:\vscode_test\3rdparty\src\freetype-2.10.0\src\type1\t1driver.c(578): warning C4267: “=”: 从“size_t”转换到“FT_ULong”，可能丢失数据
+d:\vscode_test\3rdparty\src\freetype-2.10.0\src\type1\t1driver.c(587): warning C4267: “=”: 从“size_t”转换到“FT_ULong”，可能丢失数据
+d:\vscode_test\3rdparty\src\freetype-2.10.0\src\type1\t1driver.c(596): warning C4267: “=”: 从“size_t”转换到“FT_ULong”，可能丢失数据
+d:\vscode_test\3rdparty\src\freetype-2.10.0\src\type1\t1driver.c(606): warning C4267: “=”: 从“size_t”转换到“FT_ULong”，可能丢失数据
+d:\vscode_test\3rdparty\src\freetype-2.10.0\src\type1\t1load.c(1742): warning C4244: “=”: 从“__int64”转换到“FT_Int”，可能丢失数据
+d:\vscode_test\3rdparty\src\freetype-2.10.0\src\type1\t1load.c(1912): warning C4244: “=”: 从“__int64”转换到“FT_Int”，可能丢失数据
+  type42.c
+d:\vscode_test\3rdparty\src\freetype-2.10.0\src\type42\t42parse.c(836): warning C4244: “=”: 从“__int64”转换到“FT_Int”，可能丢失数据
+  winfnt.c
+  ftdebug.c
+  正在生成代码...
+  freetype.vcxproj -> D:\vscode_test\3rdparty\src\freetype-2.10.0\bulid\RelWithDebInfo\freetype.lib

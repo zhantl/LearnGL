@@ -1,0 +1,1 @@
+C:\PROGRA~2\MICROS~2.0\VC\bin\amd64\link.exe /lib /nologo /machine:x64 /out:gltest_lib.lib @CMakeFiles\gltest_lib.dir\objects1.rsp 
