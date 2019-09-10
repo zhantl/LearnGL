@@ -66,7 +66,7 @@ void Label::init()
     m_IBO = new IndexBUffer(indics, BufferSize::RENDER_INDICES_SIZE);
 
     m_FTatlas = texture_atlas_new(512, 512, 1);
-    m_FTfont = texture_font_new_from_file(m_FTatlas, 48, "res/font/arial.ttf");
+    m_FTfont = texture_font_new_from_file(m_FTatlas, 48, "res/font/fontthin.ttf");
 
     glGenTextures(1, &m_FTatlas->id);
     glBindTexture(GL_TEXTURE_2D, m_FTatlas->id);
@@ -76,16 +76,53 @@ void Label::init()
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 }
 
+void Label::splietUtf8String(const std::string &text, std::vector<std::string> &result)
+{
+    for (int i = 0; i < text.length();)
+    {
+        char chr = text[i];
+        //chr是0xxx xxxx，即ascii码
+        if ((chr & 0x80) == 0)
+        {
+            result.push_back(text.substr(i, 1));
+            ++i;
+        } //chr是1111 1xxx
+        else if ((chr & 0xF8) == 0xF8)
+        {
+            result.push_back(text.substr(i, 5));
+            i += 5;
+        } //chr是1111 xxxx
+        else if ((chr & 0xF0) == 0xF0)
+        {
+            result.push_back(text.substr(i, 4));
+            i += 4;
+        } //chr是111x xxxx
+        else if ((chr & 0xE0) == 0xE0)
+        {
+            result.push_back(text.substr(i, 3));
+            i += 3;
+        } //chr是11xx xxxx
+        else if ((chr & 0xC0) == 0xC0)
+        {
+            result.push_back(text.substr(i, 2));
+            i += 2;
+        }
+    }
+}
+
 void Label::setString(const std::string &text)
 {
     m_idxCount = 0;
     m_text = text;
+
+    std::vector<std::string> result;
+    splietUtf8String(m_text, result);
+
     float x = 0.;
     float y = 0.;
-    for (size_t i = 0; i < m_text.length(); i++)
+    for (size_t i = 0; i < result.size(); i++)
     {
-        char c = m_text.at(i);
-        texture_glyph_t *glyph = texture_font_get_glyph(m_FTfont, &c);
+        texture_glyph_t *glyph = texture_font_get_glyph(m_FTfont, result[i].c_str());
 
         if (glyph != nullptr)
         {
@@ -126,6 +163,7 @@ void Label::setString(const std::string &text)
 
     m_size.x = x;
     m_size.y = y;
+    m_dirty = true;
 
     glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
     glBindTexture(GL_TEXTURE_2D, m_FTatlas->id);
@@ -137,7 +175,18 @@ void Label::draw(Shader &shader)
     shader.use();
     shader.setMat4("model", getTransform());
 
-    auto t = m_matTransform * glm::vec4(m_vertexDatas[0].vertex, 1.);
+    // m_vertexDatas[0].vertex = glm::vec3(100, 100, 0.);
+    // m_vertexDatas[0].uv = glm::vec2(0, 1);
+
+    // m_vertexDatas[1].vertex = glm::vec3(100, 300, 0.);
+    // m_vertexDatas[1].uv = glm::vec2(0, 0);
+
+    // m_vertexDatas[2].vertex = glm::vec3(500, 300, 0.);
+    // m_vertexDatas[2].uv = glm::vec2(1, 0);
+
+    // m_vertexDatas[3].vertex = glm::vec3(500, 100, 0.);
+    // m_vertexDatas[3].uv = glm::vec2(1, 1);
+    // m_idxCount = 6;
 
     glBindBuffer(GL_ARRAY_BUFFER, m_VBO);
     auto buff_size = BufferSize::RENDER_VERTEX_SIZE * 4 * m_idxCount / 6;

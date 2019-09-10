@@ -9,7 +9,6 @@
 class Label: public Node
 {
 public:
-public:
     Label();
     ~Label();
     static Label *create();
@@ -17,6 +16,9 @@ public:
     void init();
     void draw(Shader& shader) override;
     void setString(const std::string &text);
+
+private:
+    void splietUtf8String(const std::string& str, std::vector<std::string>& result);
 
 private:
     GLuint m_VAO;

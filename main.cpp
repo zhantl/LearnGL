@@ -38,7 +38,7 @@ int main(int argc, const char **argv)
 	auto lable = Label::create();
 	lable->setColor(glm::vec4(1., 0., 0., 1.0));
 	lable->setPosition(glm::vec3(200., 150., 0.));
-	lable->setString("hello!");
+	lable->setString("怎么回事？");
 	sprite->addChild(lable);
 
 	float start_time = 0.f;

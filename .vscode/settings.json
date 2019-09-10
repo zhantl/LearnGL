@@ -116,7 +116,12 @@
         "string.h": "c",
         "edtaa3func.h": "c",
         "stdlib.h": "c",
-        "vorbisfile.h": "c"
+        "vorbisfile.h": "c",
+        "atomic": "cpp",
+        "memory_resource": "cpp",
+        "optional": "cpp",
+        "cinttypes": "cpp",
+        "condition_variable": "cpp"
     },
     "C_Cpp.configurationWarnings": "Disabled",
     "C_Cpp.dimInactiveRegions": false,

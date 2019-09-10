@@ -1,6 +1,0 @@
-D:/vscode_test/build/CMakeFiles/edit_cache.dir
-D:/vscode_test/build/CMakeFiles/vscode_test.dir
-D:/vscode_test/build/CMakeFiles/rebuild_cache.dir
-D:/vscode_test/build/src/CMakeFiles/gltest_lib.dir
-D:/vscode_test/build/src/CMakeFiles/edit_cache.dir
-D:/vscode_test/build/src/CMakeFiles/rebuild_cache.dir
