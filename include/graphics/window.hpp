@@ -22,10 +22,10 @@ public:
         MAX_KEY_CODE = 1024,
         MAX_MOUSE_CODE = 8,
     };
-    Window(char const *title, int width, int height);
+    Window();
     ~Window();
-    Window(const Window &) = delete;
-    Window &operator=(const Window &) = delete;
+    static Window *getInstance();
+    bool initWindow(char const *title, int width, int height);
 
     void update() const;
     void clear() const;
@@ -35,10 +35,11 @@ public:
     inline int getHeight() const { return m_height; };
     bool isKeyPress(unsigned int key) const;
     bool isMouseButtonPress(unsigned int btn) const;
-    void getCursorPosition(double &x, double &y) const; 
+    void getCursorPosition(double &x, double &y) const;
 
 private:
-    bool init();
+    Window(const Window &) = delete;
+    Window &operator=(const Window &) = delete;
     friend void resize_callback(GLFWwindow *window, int width, int height);
     friend void key_callback(GLFWwindow *window, int key, int scancode, int action, int mods);
     friend void cursor_position_callback(GLFWwindow *window, double xpos, double ypos);
@@ -52,4 +53,6 @@ private:
     bool m_keys[MAX_KEY_CODE];
     bool m_mouse_button[MAX_MOUSE_CODE];
     double m_x, m_y;
+
+    static Window *instatnce;
 };

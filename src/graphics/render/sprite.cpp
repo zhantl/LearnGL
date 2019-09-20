@@ -13,7 +13,11 @@ Sprite::~Sprite()
     removeFormParent();
     removeChildren();
     delete m_IBO;
+    m_IBO = nullptr;
     delete m_texture;
+    m_texture = nullptr;
+    glDeleteBuffers(1, &m_VBO);
+    glDeleteVertexArrays(1, &m_VAO);
 }
 
 Sprite *Sprite::create()
@@ -51,7 +55,7 @@ void Sprite::init()
     glBindVertexArray(0);
 
     GLuint indics[6] = {0, 1, 2, 2, 3, 0};
-    m_IBO = new IndexBUffer(indics, BufferSize::RENDER_INDICES_SIZE);
+    m_IBO = new IndexBUffer(indics, 6);
 
     m_vertexDatas[0].uv = glm::vec2(0, 0);
     m_vertexDatas[1].uv = glm::vec2(0, 1);
@@ -61,7 +65,20 @@ void Sprite::init()
 
 void Sprite::setTexture(const std::string &img_path)
 {
-    m_texture = Texture::create(img_path);
+    m_texture = Texture2D::create(img_path);
+    setSize(glm::vec2(m_texture->getWidth(), m_texture->getHegiht()));
+}
+
+void Sprite::setTexture(Texture2D *texture)
+{
+    if (m_texture == texture)
+        return;
+    if (m_texture)
+    {
+        delete m_texture;
+        m_texture = nullptr;
+    }
+    m_texture = texture;
     setSize(glm::vec2(m_texture->getWidth(), m_texture->getHegiht()));
 }
 
@@ -93,7 +110,7 @@ void Sprite::draw(Shader &shader)
     m_IBO->bind();
 
     glActiveTexture(GL_TEXTURE0);
-    glBindTexture(GL_TEXTURE_2D, m_texture->getID());
+    m_texture->bind();
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
 
     m_IBO->unbind();

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "node.hpp"
-#include "texture.hpp"
+#include "texture2d.hpp"
 
 class Sprite: public Node
 {
@@ -13,11 +13,12 @@ public:
     void init();
     void draw(Shader& shader) override;
     void setTexture(const std::string &img_path);
+    void setTexture(Texture2D *texture);
 
 private:
     GLuint m_VAO;
     GLuint m_VBO;
     IndexBUffer *m_IBO;
-    Texture *m_texture;
+    Texture2D *m_texture;
     VertexData m_vertexDatas[4];
 };

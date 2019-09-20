@@ -1,4 +1,6 @@
+#include <glm/glm.hpp>
 #include <graphics/window.hpp>
+#include "event_dispatch.hpp"
 
 GLenum glCheckError_(const char *file, int line)
 {
@@ -8,24 +10,41 @@ GLenum glCheckError_(const char *file, int line)
         std::string error;
         switch (errorCode)
         {
-            case GL_INVALID_ENUM:                  error = "INVALID_ENUM"; break;
-            case GL_INVALID_VALUE:                 error = "INVALID_VALUE"; break;
-            case GL_INVALID_OPERATION:             error = "INVALID_OPERATION"; break;
-            // case GL_STACK_OVERFLOW:                error = "STACK_OVERFLOW"; break;
-            // case GL_STACK_UNDERFLOW:               error = "STACK_UNDERFLOW"; break;
-            case GL_OUT_OF_MEMORY:                 error = "OUT_OF_MEMORY"; break;
-            case GL_INVALID_FRAMEBUFFER_OPERATION: error = "INVALID_FRAMEBUFFER_OPERATION"; break;
+        case GL_INVALID_ENUM:
+            error = "INVALID_ENUM";
+            break;
+        case GL_INVALID_VALUE:
+            error = "INVALID_VALUE";
+            break;
+        case GL_INVALID_OPERATION:
+            error = "INVALID_OPERATION";
+            break;
+        case GL_OUT_OF_MEMORY:
+            error = "OUT_OF_MEMORY";
+            break;
+        case GL_INVALID_FRAMEBUFFER_OPERATION:
+            error = "INVALID_FRAMEBUFFER_OPERATION";
+            break;
         }
         std::cout << error << " | " << file << " (" << line << ")" << std::endl;
     }
     return errorCode;
 }
 
-Window::Window(char const *title, int width, int height) 
-    : m_width(width), m_height(height), m_title(title), m_x(0.), m_y(0.)
+Window *Window::instatnce = nullptr;
+
+Window* Window::getInstance()
 {
-    if (!init())
-        glfwTerminate();
+    if (!instatnce)
+    {
+        instatnce = new Window;
+    }
+    return instatnce;
+}
+
+Window::Window()
+    :m_x(0.), m_y(0.)
+{
     for (size_t i = 0; i < MAX_KEY_CODE; i++)
     {
         m_keys[i] = false;
@@ -42,8 +61,11 @@ Window::~Window()
     glfwTerminate();
 }
 
-bool Window::init()
+bool Window::initWindow(char const *title, int width, int height)
 {
+    m_width = width;
+    m_height = height;
+    m_title = title;
     glfwInit();
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
@@ -65,6 +87,7 @@ bool Window::init()
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
     {
         std::cout << "Failed to init GLAD" << std::endl;
+        glfwTerminate();
         return false;
     }
     std::cout << "gl version = " << glGetString(GL_VERSION) << std::endl;
@@ -90,14 +113,14 @@ bool Window::closed() const
 
 bool Window::isKeyPress(unsigned int key) const
 {
-    if(key > MAX_KEY_CODE)
+    if (key > MAX_KEY_CODE)
         return false;
     return m_keys[key];
 }
 
 bool Window::isMouseButtonPress(unsigned int btn) const
 {
-    if(btn > MAX_MOUSE_CODE)
+    if (btn > MAX_MOUSE_CODE)
         return false;
     return m_mouse_button[btn];
 }
@@ -120,6 +143,10 @@ void key_callback(GLFWwindow *window, int key, int scancode, int action, int mod
 {
     Window *win = static_cast<Window *>(glfwGetWindowUserPointer(window));
     win->m_keys[key] = action != GLFW_RELEASE;
+
+    Event event(EventType::EVNET_KEYBOARD);
+    event.setArgs(static_cast<void *>(&key));
+    EventDispatch::getInstance()->dispatchEevent(event);
 }
 
 void cursor_position_callback(GLFWwindow *window, double xpos, double ypos)
@@ -127,6 +154,12 @@ void cursor_position_callback(GLFWwindow *window, double xpos, double ypos)
     Window *win = static_cast<Window *>(glfwGetWindowUserPointer(window));
     win->m_x = xpos;
     win->m_y = ypos;
+
+    Event event(EventType::EVENT_TOUCH);
+    auto pos = new glm::vec2(xpos, ypos);
+    event.setArgs(static_cast<void *>(pos));
+    EventDispatch::getInstance()->dispatchEevent(event);
+    delete pos;
 }
 
 void mouse_button_callback(GLFWwindow *window, int button, int action, int mods)
@@ -137,5 +170,9 @@ void mouse_button_callback(GLFWwindow *window, int button, int action, int mods)
 
 void scroll_callback(GLFWwindow *window, double xoffset, double yoffset)
 {
-    
+    Event event(EventType::EVENT_SCROLL);
+    auto offset = new glm::vec2(xoffset, yoffset);
+    event.setArgs(static_cast<void *>(offset));
+    EventDispatch::getInstance()->dispatchEevent(event);
+    delete offset;
 }

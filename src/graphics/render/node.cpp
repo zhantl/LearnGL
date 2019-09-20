@@ -5,6 +5,9 @@ Node::Node()
       m_angle(0.0),
       m_visible(true),
       m_dirty(false),
+      m_pos(glm::vec3(0., 0., 0.)),
+      m_size(glm::vec2(0, 0.)),
+      m_color(glm::vec4(1., 1., 1., 1.)),
       m_matTransform(glm::mat4(1.0)),
       m_parent(nullptr)
 {

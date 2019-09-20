@@ -5,6 +5,7 @@
 #include <freetyp-gl/texture-font.h>
 
 #include "node.hpp"
+#include "texture2d.hpp"
 
 class Label: public Node
 {
@@ -16,6 +17,8 @@ public:
     void init();
     void draw(Shader& shader) override;
     void setString(const std::string &text);
+
+    Texture2D *getTexture() { return m_texture; } // for text
 
 private:
     void splietUtf8String(const std::string& str, std::vector<std::string>& result);
@@ -31,4 +34,5 @@ private:
     ftgl::texture_font_t *m_FTfont;
 
     std::string m_text;
+    Texture2D *m_texture;
 };

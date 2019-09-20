@@ -6,7 +6,8 @@ Label::Label()
     : m_VAO(0),
       m_VBO(0),
       m_IBO(nullptr),
-      m_idxCount(0)
+      m_idxCount(0),
+      m_texture(nullptr)
 {
 }
 
@@ -15,8 +16,13 @@ Label::~Label()
     removeFormParent();
     removeChildren();
     delete m_IBO;
+    m_IBO = nullptr;
+    glDeleteBuffers(1, &m_VBO);
+    glDeleteVertexArrays(1, &m_VAO);
     texture_font_delete(m_FTfont);
     texture_atlas_delete(m_FTatlas);
+    delete m_texture;
+    m_texture = nullptr;
 }
 
 Label *Label::create()
@@ -44,6 +50,7 @@ void Label::init()
     glGenBuffers(1, &m_VBO);
     glBindVertexArray(m_VAO);
     glBindBuffer(GL_ARRAY_BUFFER, m_VBO);
+    glBufferData(GL_ARRAY_BUFFER, BufferSize::RENDER_BUFFER_SIZE, 0, GL_DYNAMIC_DRAW);
     glEnableVertexAttribArray(BufferSize::SHADER_VERTEX_INDEX);
     glEnableVertexAttribArray(BufferSize::SHADER_UV_INDEX);
     glEnableVertexAttribArray(BufferSize::SHADER_COLOR_INDEX);
@@ -68,12 +75,15 @@ void Label::init()
     m_FTatlas = texture_atlas_new(512, 512, 1);
     m_FTfont = texture_font_new_from_file(m_FTatlas, 48, "res/font/fontthin.ttf");
 
-    glGenTextures(1, &m_FTatlas->id);
-    glBindTexture(GL_TEXTURE_2D, m_FTatlas->id);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    m_texture = Texture2D::create();
+    m_texture->setFormat(GL_RED);
+    m_texture->setWidth(512);
+    m_texture->setHeight(512);
+    m_texture->setWrapS(GL_CLAMP_TO_EDGE);
+    m_texture->setWrapT(GL_CLAMP_TO_EDGE);
+    m_texture->setFilterMax(GL_LINEAR);
+    m_texture->setFilterMin(GL_LINEAR);
+    m_texture->generateTexture();
 }
 
 void Label::splietUtf8String(const std::string &text, std::vector<std::string> &result)
@@ -165,9 +175,7 @@ void Label::setString(const std::string &text)
     m_size.y = y;
     m_dirty = true;
 
-    glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
-    glBindTexture(GL_TEXTURE_2D, m_FTatlas->id);
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RED, m_FTatlas->width, m_FTatlas->height, 0, GL_RED, GL_UNSIGNED_BYTE, m_FTatlas->data);
+    m_texture->fillTexture(m_FTatlas->data);
 }
 
 void Label::draw(Shader &shader)
@@ -175,24 +183,9 @@ void Label::draw(Shader &shader)
     shader.use();
     shader.setMat4("model", getTransform());
 
-    // m_vertexDatas[0].vertex = glm::vec3(100, 100, 0.);
-    // m_vertexDatas[0].uv = glm::vec2(0, 1);
-
-    // m_vertexDatas[1].vertex = glm::vec3(100, 300, 0.);
-    // m_vertexDatas[1].uv = glm::vec2(0, 0);
-
-    // m_vertexDatas[2].vertex = glm::vec3(500, 300, 0.);
-    // m_vertexDatas[2].uv = glm::vec2(1, 0);
-
-    // m_vertexDatas[3].vertex = glm::vec3(500, 100, 0.);
-    // m_vertexDatas[3].uv = glm::vec2(1, 1);
-    // m_idxCount = 6;
-
     glBindBuffer(GL_ARRAY_BUFFER, m_VBO);
-    auto buff_size = BufferSize::RENDER_VERTEX_SIZE * 4 * m_idxCount / 6;
-    glBufferData(GL_ARRAY_BUFFER, buff_size, 0, GL_STATIC_DRAW);
     void *data = glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
-    memcpy(data, m_vertexDatas, buff_size);
+    memcpy(data, m_vertexDatas, BufferSize::RENDER_VERTEX_SIZE * 4 * m_idxCount / 6);
     glUnmapBuffer(GL_ARRAY_BUFFER);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
 
@@ -200,8 +193,7 @@ void Label::draw(Shader &shader)
     m_IBO->bind();
 
     glActiveTexture(GL_TEXTURE0);
-    glBindTexture(GL_TEXTURE_2D, m_FTatlas->id);
-    // glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+    m_texture->bind();
     glDrawElements(GL_TRIANGLES, m_idxCount, GL_UNSIGNED_INT, nullptr);
 
     m_IBO->unbind();

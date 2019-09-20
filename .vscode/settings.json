@@ -121,10 +121,12 @@
         "memory_resource": "cpp",
         "optional": "cpp",
         "cinttypes": "cpp",
-        "condition_variable": "cpp"
+        "condition_variable": "cpp",
+        "hash_map": "cpp"
     },
     "C_Cpp.configurationWarnings": "Disabled",
     "C_Cpp.dimInactiveRegions": false,
     "git.ignoreLimitWarning": true,
+    "python.pythonPath": "C:\\Python27\\python.exe",
     
 }
