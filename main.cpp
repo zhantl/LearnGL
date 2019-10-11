@@ -74,7 +74,7 @@ int main(int argc, const char **argv)
 	auto hdrTex = Texture2D::create();
 	hdrTex->setTextureDataType(GL_FLOAT);
 	hdrTex->setInternalFormat(GL_RGB16F);
-	hdrTex->loadTextureData("res/textures/hdr/newport_loft.hdr");
+	hdrTex->loadTextureData("res/textures/hdr/06_kapellen_townsquare2.hdr");
 	cube->setTexture(hdrTex);
 
 	auto *fb_base = FrameBuffer::createFrameBuffer(512, 512);
