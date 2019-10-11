@@ -56,15 +56,16 @@ public:
     void setDirty(bool dirty);
     void setPosition(const glm::vec3 &pos);
     void setScale(float scale);
-    void setRotation(float angle);
+    void setRotation(float angle, glm::vec3 axis = glm::vec3(0., 0., 1.));
 
     const glm::mat4 &getTransform();
-    void genTransform();
+    virtual void genTransform();
 
 protected:
     std::string m_name;
     float m_scale;
     float m_angle;
+    glm::vec3 m_rotateAxis;
     bool m_visible;
     bool m_dirty;
     glm::vec3 m_pos;

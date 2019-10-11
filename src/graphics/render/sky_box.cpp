@@ -94,7 +94,7 @@ void SkyBox::draw()
     m_IBO->bind();
 
     glActiveTexture(GL_TEXTURE0);
-    m_texture->bind();
+    m_texture->bindTexture();
     glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, nullptr);
 
     m_IBO->unbind();

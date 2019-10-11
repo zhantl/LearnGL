@@ -1,7 +1,7 @@
 #pragma once
 
 #include <graphics/shader.hpp>
-#include "texture_cube.hpp"
+#include "../texture/texture_cube.hpp"
 #include "../buffers/indexbuffer.hpp"
 
 

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "node.hpp"
-#include "texture2d.hpp"
+#include "../texture/texture2d.hpp"
 
 class Sprite: public Node
 {

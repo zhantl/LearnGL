@@ -5,7 +5,7 @@
 #include <freetyp-gl/texture-font.h>
 
 #include "node.hpp"
-#include "texture2d.hpp"
+#include "../texture/texture2d.hpp"
 
 class Label: public Node
 {

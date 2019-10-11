@@ -77,13 +77,8 @@ void Label::init()
 
     m_texture = Texture2D::create();
     m_texture->setFormat(GL_RED);
-    m_texture->setWidth(512);
-    m_texture->setHeight(512);
-    m_texture->setWrapS(GL_CLAMP_TO_EDGE);
-    m_texture->setWrapT(GL_CLAMP_TO_EDGE);
-    m_texture->setFilterMax(GL_LINEAR);
-    m_texture->setFilterMin(GL_LINEAR);
-    m_texture->generateTexture();
+    m_texture->setSize(512, 512);
+    m_texture->configTexture();
 }
 
 void Label::splietUtf8String(const std::string &text, std::vector<std::string> &result)
@@ -137,7 +132,7 @@ void Label::setString(const std::string &text)
         if (glyph != nullptr)
         {
             float x0 = x + glyph->offset_x;
-            float y0 = 0. + glyph->offset_y - glyph->height;
+            float y0 = glyph->offset_y - glyph->height;
             float x1 = x0 + glyph->width;
             float y1 = y0 + glyph->height;
             if (y < glyph->height)
@@ -193,7 +188,7 @@ void Label::draw(Shader &shader)
     m_IBO->bind();
 
     glActiveTexture(GL_TEXTURE0);
-    m_texture->bind();
+    m_texture->bindTexture();
     glDrawElements(GL_TRIANGLES, m_idxCount, GL_UNSIGNED_INT, nullptr);
 
     m_IBO->unbind();

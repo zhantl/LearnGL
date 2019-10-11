@@ -3,6 +3,7 @@
 Node::Node()
     : m_scale(1.0),
       m_angle(0.0),
+      m_rotateAxis(glm::vec3(0., 0., 1.)),
       m_visible(true),
       m_dirty(false),
       m_pos(glm::vec3(0., 0., 0.)),
@@ -94,9 +95,10 @@ void Node::setScale(float scale)
     setDirty(true);
 }
 
-void Node::setRotation(float angle)
+void Node::setRotation(float angle, glm::vec3 axis /*= glm::vec3(0., 0., 1.)*/)
 {
     m_angle = angle;
+    m_rotateAxis = axis;
     setDirty(true);
 }
 
@@ -106,10 +108,10 @@ void Node::genTransform()
     m_matTransform = glm::translate(m_matTransform, m_pos);
 
     m_matTransform = glm::translate(m_matTransform, glm::vec3(m_size.x * 0.5 * m_scale, m_size.y * 0.5 * m_scale, 0.f));
-    m_matTransform = glm::rotate(m_matTransform, glm::radians(m_angle), glm::vec3(0., 0., 1.));
+    m_matTransform = glm::rotate(m_matTransform, glm::radians(m_angle), m_rotateAxis);
     m_matTransform = glm::translate(m_matTransform, glm::vec3(-m_size.x * 0.5 * m_scale, -m_size.y * 0.5 * m_scale, 0.f));
 
-    m_matTransform = glm::scale(m_matTransform, glm::vec3(m_scale, m_scale, 1.f));
+    m_matTransform = glm::scale(m_matTransform, glm::vec3(m_scale, m_scale, 0.f));
 
     if(m_parent != nullptr)
     {

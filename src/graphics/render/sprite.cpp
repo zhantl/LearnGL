@@ -105,12 +105,15 @@ void Sprite::draw(Shader &shader)
     memcpy(data, m_vertexDatas, BufferSize::RENDER_VERTEX_SIZE * 4);
     glUnmapBuffer(GL_ARRAY_BUFFER);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
- 
+
     glBindVertexArray(m_VAO);
     m_IBO->bind();
 
-    glActiveTexture(GL_TEXTURE0);
-    m_texture->bind();
+    if (m_texture)
+    {
+        glActiveTexture(GL_TEXTURE0);
+        m_texture->bindTexture();
+    }
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
 
     m_IBO->unbind();
