@@ -8,7 +8,7 @@
 #include "./src/graphics/render/sprite.hpp"
 
 #include "./src/camera.h"
-#include "./src/graphics/render/sky_box.cpp"
+#include "./src/graphics/render/sky_box.hpp"
 
 #include "../src/graphics/buffers/framebuffer.hpp"
 

@@ -1,4 +1,5 @@
 {
+    "workbench.editor.enablePreview": false,
     "files.defaultLanguage": "cpp", // ctrl+N新建文件后默认的语言
     "editor.formatOnType": true, // （对于C/C++）输入分号后自动格式化当前这一行的代码
     "editor.suggest.snippetsPreventQuickSuggestions": true, // clangd的snippets有很多的跳转点，不用这个就必须手动触发Intellisense了
@@ -7,7 +8,7 @@
     "files.autoGuessEncoding": true,
     "editor.minimap.enabled": false,
 
-    "cmake.cmakePath": "C:/Program Files (x86)/CMake/bin/cmake.exe",
+    "cmake.cmakePath": "C:/Program Files/CMake/bin/cmake.exe",
     "cmake.generator": "MinGW Makefiles",
     "cmake.debugConfig": {
         "miDebuggerPath": "gdb",
