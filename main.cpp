@@ -161,7 +161,7 @@ int main(int argc, const char **argv)
 	sprite->draw(shader_brdf);
 	fb_base->endRender();
 
-	skyBox->setTexture(cub_tex);
+	// skyBox->setTexture(cub_tex);
 
 	auto albedoMap = Texture2D::create("./res/textures/pbr/gold/albedo.png");
 	auto normalMap = Texture2D::create("./res/textures/pbr/gold/normal.png");

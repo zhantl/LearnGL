@@ -65,6 +65,10 @@ void EventDispatch::addEventListener(EventListener *listener)
         listeners = new std::vector<EventListener *>();
         m_listeners.emplace(listener->m_type, listeners);
     }
+    else
+    {
+        listeners = iter->second;
+    }
     listeners->push_back(listener);
 }
 
