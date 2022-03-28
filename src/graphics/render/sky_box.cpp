@@ -79,7 +79,7 @@ void SkyBox::init()
     };
     m_IBO = new IndexBUffer(indics, 36);
 
-    m_shader = new Shader("./res/shader/sky_box.vs", "./res/shader/sky_box.fs");
+    m_shader = new Shader("res/shader/sky_box.vs", "res/shader/sky_box.fs");
 }
 
 void SkyBox::setTexture(TextureCube *cube_texture)
