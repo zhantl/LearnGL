@@ -42,6 +42,16 @@ mLocalTransform(1.0f)
     }
 }
 
+Bone::~Bone()
+{
+    mPositionFrames.clear();
+    mPositionFrames.shrink_to_fit();
+    mRotationFrames.clear();
+    mRotationFrames.shrink_to_fit();
+    mScaleFrames.clear();
+    mScaleFrames.shrink_to_fit();
+}
+
 void Bone::update(float aniamtionTime)
 {
     glm::mat4 translation = InterpolatePosition(aniamtionTime);
@@ -137,6 +147,12 @@ Animation::Animation(aiNode* rootNode, aiAnimation *animation, Model* model)
     readMissingBones(animation, model);
 }
 
+Animation::~Animation()
+{
+    mBones.clear();
+    mBones.shrink_to_fit();
+}
+
 Bone *Animation::findBone(const std::string &name)
 {
 	for (auto& bone : mBones)
@@ -197,6 +213,20 @@ Animator::Animator(const aiScene* scene, Model* model)
     {
         mFinalTransforms.push_back(glm::mat4(1.f));
     }
+}
+
+Animator::~Animator()
+{
+    mFinalTransforms.clear();
+    mFinalTransforms.shrink_to_fit();
+    mModel = nullptr;
+    for (auto animation: mAnimations)
+    {
+        delete animation;
+    }
+    mAnimations.clear();
+    mAnimations.shrink_to_fit();
+	mCurAnimation = nullptr;
 }
 
 void Animator::updateAnimation(float dt)

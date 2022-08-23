@@ -23,11 +23,8 @@ public:
 class Model
 {
 public:
-	vector<Texture> texture_loads;
-	vector<Mesh *> meshes;
-	bool gammaCorrection;
-
 	Model(string const &path, bool gamma=false);
+	~Model();
 	void update(float dt);
 	void Draw(Shader shader);
 	void playAnimation(const std::string name);
@@ -41,4 +38,7 @@ private:
 	std::string mPath;
 	std::map<std::string, BoneInfo> mBoneMapping;
 	Animator *mAnimator;
+	vector<Texture> texture_loads;
+	vector<Mesh *> meshes;
+	bool gammaCorrection;
 };

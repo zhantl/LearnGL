@@ -22,9 +22,8 @@ public:
         MAX_KEY_CODE = 1024,
         MAX_MOUSE_CODE = 8,
     };
-    Window();
-    ~Window();
     static Window *getInstance();
+    static void destory();
     bool initWindow(char const *title, int width, int height);
 
     void update() const;
@@ -38,6 +37,8 @@ public:
     void getCursorPosition(double &x, double &y) const;
 
 private:
+    Window();
+    ~Window();
     Window(const Window &) = delete;
     Window &operator=(const Window &) = delete;
     friend void resize_callback(GLFWwindow *window, int width, int height);

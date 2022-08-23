@@ -13,13 +13,14 @@
 #include "graphics/render/Sphere.hpp"
 #include "graphics/model/Model.hpp"
 #include "Camera.h"
+#include "graphics/FileUtils.hpp"
 
 int main(int argc, const char **argv)
 {
 	auto window = Window::getInstance();
 	if (!window->initWindow("LearnGL", 960, 540))
 	{
-		delete window;
+		Window::destory();
 		return 0;
 	}
 
@@ -357,7 +358,8 @@ int main(int argc, const char **argv)
 	delete sprite;
 	delete lable;
 	delete skyBox;
-	delete window;
+	Window::destory();
+	FileUtils::destroy();
 
 	return 0;
 }

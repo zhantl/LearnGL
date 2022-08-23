@@ -36,6 +36,7 @@ class Bone
 {
 public:
 	Bone(const std::string &name, unsigned int ID, const aiNodeAnim* channel);
+	~Bone();
 	void update(float aniamtionTime);
 	glm::mat4 getLoactionTransForm() { return mLocalTransform; }
 	std::string getBoneName() { return mName; }
@@ -68,12 +69,19 @@ struct AssimpNodeData
 	glm::mat4 transform;
 	std::string name;
 	std::vector<AssimpNodeData> children;
+
+	~AssimpNodeData()
+	{
+		children.clear();
+		children.shrink_to_fit();
+	}
 };
 
 class Animation
 {
 public:
 	Animation() = default;
+	~Animation();
 	Animation(aiNode* rootNode, aiAnimation *animation, Model *model);
 	Bone *findBone(const std::string &name);
 	const std::string& getName() { return mName; }
@@ -95,6 +103,7 @@ private:
 class Animator
 {
 public:
+	~Animator();
 	Animator(const aiScene* scene, Model* model);
 	void updateAnimation(float dt);
 	void playAnimation(const std::string &name);

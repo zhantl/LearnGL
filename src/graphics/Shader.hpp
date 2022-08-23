@@ -12,6 +12,7 @@ class Shader
 public:
 	unsigned int ID;
 	Shader(const char *vertexFile, const char *fragmentFile, const char *geometryFile = nullptr);
+	~Shader() = default;
 	void use();
 	GLint getAtrributeLocation(const std::string &name);
 	void setBool(const std::string &name, bool value) const;

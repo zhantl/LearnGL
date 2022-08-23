@@ -43,6 +43,8 @@ struct Texture
 class Mesh
 {
 public:
+	Mesh() = default;
+	~Mesh();
 	void initWithAiMesh(aiMesh *mesh);
 	vector<Texture>* getTextures() { return &mTextures; }
 	void Mesh::addVertexWeight(const aiVertexWeight &weight, unsigned int bondID);

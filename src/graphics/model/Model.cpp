@@ -8,6 +8,25 @@ Model::Model(string const &path, bool gamma) :
     this->loadModel();
 }
 
+Model::~Model()
+{
+	delete mAnimator;
+	mAnimator = nullptr;
+    for (auto mesh : meshes)
+    {
+        delete mesh;
+    }
+    meshes.clear();
+    meshes.shrink_to_fit();
+    for (auto texture: texture_loads)
+    {
+        glDeleteTextures(1, &texture.id);
+    }
+    texture_loads.clear();
+    texture_loads.shrink_to_fit();
+    mBoneMapping.clear();
+}
+
 void Model::update(float dt)
 {
     mAnimator->updateAnimation(dt);

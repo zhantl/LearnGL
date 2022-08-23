@@ -11,10 +11,15 @@ class FileUtils
 {
 public:
     static FileUtils *getInstance();
-	std::string readFile(const std::string& filepath);
+    static void destroy();
+    std::string readFile(const std::string& filepath);
     std::string readFile(const char *filepath);
 	unsigned int loadTexture(const std::string& path, bool gamga = false);
     unsigned int loadTexture(const char *path, bool gamga = false);
 private:
+    FileUtils() = default;
+    ~FileUtils() = default;
+    FileUtils(const FileUtils &) = delete;
+    FileUtils &operator=(const FileUtils &) = delete;
     static FileUtils *fileUtils;
 };

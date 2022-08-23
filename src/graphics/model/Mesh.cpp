@@ -2,6 +2,16 @@
 #include <assimp/scene.h>
 #include "Mesh.hpp"
 
+Mesh::~Mesh()
+{
+    mVertices.clear();
+    mVertices.shrink_to_fit();
+    mIndices.clear();
+    mIndices.shrink_to_fit();
+    mTextures.clear();
+    mTextures.shrink_to_fit();
+}
+
 void Mesh::initWithAiMesh(aiMesh *mesh)
 {
     mVertices.reserve(mesh->mNumVertices);
