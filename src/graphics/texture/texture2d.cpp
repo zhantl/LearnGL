@@ -1,5 +1,5 @@
-#include "texture2d.hpp"
 #include <iostream>
+#include "Texture2D.hpp"
 
 Texture2D::Texture2D()
     : TextureBase(), m_fileName("")

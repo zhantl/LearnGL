@@ -2,11 +2,11 @@
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
-#include <graphics/shader.hpp>
 #include <string>
 #include <vector>
 
-#include "../buffers/indexbuffer.hpp"
+#include "../Shader.hpp"
+#include "../buffers/IndexBuffer.hpp"
 
 struct VertexData
 {

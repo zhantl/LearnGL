@@ -1,4 +1,4 @@
-#include "renderToCube.hpp"
+#include "RenderToCube.hpp"
 
 RenderToCube::RenderToCube(GLfloat near, GLfloat far)
     : m_near(near),
@@ -8,6 +8,7 @@ RenderToCube::RenderToCube(GLfloat near, GLfloat far)
 
 RenderToCube::~RenderToCube()
 {
+	m_viewMats.clear();
 }
 
 RenderToCube *RenderToCube::create(const glm::vec3 &viewPos, GLfloat near, GLfloat far)

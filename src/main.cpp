@@ -1,20 +1,18 @@
 #include <glm/gtc/matrix_transform.hpp>
-#include <graphics/shader.hpp>
-#include <graphics/window.hpp>
 #include <math.h>
 #include <time.h>
 
-#include "./graphics/render/label.hpp"
-#include "./graphics/render/sprite.hpp"
-
-#include "./camera.h"
-#include "./graphics/render/sky_box.hpp"
-
-#include "./graphics/buffers/framebuffer.hpp"
-
-#include "./graphics/render/cube.hpp"
-#include "./graphics/render/renderToCube.hpp"
-#include "./graphics/render/sphere.hpp"
+#include "graphics/Shader.hpp"
+#include "graphics/Window.hpp"
+#include "graphics/render/Label.hpp"
+#include "graphics/render/Sprite.hpp"
+#include "graphics/render/SkyBox.hpp"
+#include "graphics/buffers/FrameBuffer.hpp"
+#include "graphics/render/Cube.hpp"
+#include "graphics/render/RenderToCube.hpp"
+#include "graphics/render/Sphere.hpp"
+#include "graphics/model/Model.hpp"
+#include "Camera.h"
 
 int main(int argc, const char **argv)
 {
@@ -195,12 +193,75 @@ int main(int argc, const char **argv)
 		glm::vec3(300.0f, 300.0f, 300.0f),
 	};
 
+
+	//模型
+    glm::vec3 pointLightPositions[] = {
+        glm::vec3( 0.7f,  0.2f,  2.0f),
+        glm::vec3( 2.3f, -3.3f, -4.0f),
+        glm::vec3(-4.0f,  2.0f, -12.0f),
+        glm::vec3( 0.0f,  0.0f, -3.0f)
+    };
+	auto static_model = Model("res/objects/vampire/dancing_vampire.dae");
+	static_model.playAnimation("");
+	Shader static_shader("res/shader/model_shader.vs", "res/shader/model_shader.fs");
+	static_shader.use();
+    static_shader.setVec3("dirLight.direction", -0.2f, -1.0f, -0.3f);
+    static_shader.setVec3("dirLight.ambient", 0.05f, 0.05f, 0.05f);
+    static_shader.setVec3("dirLight.diffuse", 0.4f, 0.4f, 0.4f);
+    static_shader.setVec3("dirLight.specular", 0.5f, 0.5f, 0.5f);
+    // point light 1
+    static_shader.setVec3("pointLights[0].position", pointLightPositions[0]);
+    static_shader.setVec3("pointLights[0].ambient", 0.05f, 0.05f, 0.05f);
+    static_shader.setVec3("pointLights[0].diffuse", 0.8f, 0.8f, 0.8f);
+    static_shader.setVec3("pointLights[0].specular", 1.0f, 1.0f, 1.0f);
+    static_shader.setFloat("pointLights[0].constant", 1.0f);
+    static_shader.setFloat("pointLights[0].linear", 0.09f);
+    static_shader.setFloat("pointLights[0].quadratic", 0.032f);
+    // point light 2
+    static_shader.setVec3("pointLights[1].position", pointLightPositions[1]);
+    static_shader.setVec3("pointLights[1].ambient", 0.05f, 0.05f, 0.05f);
+    static_shader.setVec3("pointLights[1].diffuse", 0.8f, 0.8f, 0.8f);
+    static_shader.setVec3("pointLights[1].specular", 1.0f, 1.0f, 1.0f);
+    static_shader.setFloat("pointLights[1].constant", 1.0f);
+    static_shader.setFloat("pointLights[1].linear", 0.09f);
+    static_shader.setFloat("pointLights[1].quadratic", 0.032f);
+    // point light 3
+    static_shader.setVec3("pointLights[2].position", pointLightPositions[2]);
+    static_shader.setVec3("pointLights[2].ambient", 0.05f, 0.05f, 0.05f);
+    static_shader.setVec3("pointLights[2].diffuse", 0.8f, 0.8f, 0.8f);
+    static_shader.setVec3("pointLights[2].specular", 1.0f, 1.0f, 1.0f);
+    static_shader.setFloat("pointLights[2].constant", 1.0f);
+    static_shader.setFloat("pointLights[2].linear", 0.09f);
+    static_shader.setFloat("pointLights[2].quadratic", 0.032f);
+    // point light 4
+    static_shader.setVec3("pointLights[3].position", pointLightPositions[3]);
+    static_shader.setVec3("pointLights[3].ambient", 0.05f, 0.05f, 0.05f);
+    static_shader.setVec3("pointLights[3].diffuse", 0.8f, 0.8f, 0.8f);
+    static_shader.setVec3("pointLights[3].specular", 1.0f, 1.0f, 1.0f);
+    static_shader.setFloat("pointLights[3].constant", 1.0f);
+    static_shader.setFloat("pointLights[3].linear", 0.09f);
+    static_shader.setFloat("pointLights[3].quadratic", 0.032f);
+    // spotLight
+    static_shader.setVec3("spotLight.position", camera.Position);
+    static_shader.setVec3("spotLight.direction", camera.Front);
+    static_shader.setVec3("spotLight.ambient", 0.0f, 0.0f, 0.0f);
+    static_shader.setVec3("spotLight.diffuse", 1.0f, 1.0f, 1.0f);
+    static_shader.setVec3("spotLight.specular", 1.0f, 1.0f, 1.0f);
+    static_shader.setFloat("spotLight.constant", 1.0f);
+    static_shader.setFloat("spotLight.linear", 0.09f);
+    static_shader.setFloat("spotLight.quadratic", 0.032f);
+    static_shader.setFloat("spotLight.cutOff", glm::cos(glm::radians(12.5f)));
+    static_shader.setFloat("spotLight.outerCutOff", glm::cos(glm::radians(15.0f))); 
+
 	int nrRows = 7;
 	int nrColumns = 7;
 	float spacing = 2.5;
 
-	float start_time = 0.f;
+	float last_time = 0.f;
+	float last_frame_time = 0.f;
+	float delta_time = 0.f;
 	unsigned int frame = 0;
+
 	while (!window->closed())
 	{
 		window->clear();
@@ -237,7 +298,7 @@ int main(int argc, const char **argv)
 			{
 				sphere->setScale(1.f);
 				sphere->setPosition(glm::vec3((col - (nrColumns / 2)) * spacing, (row - (nrRows / 2)) * spacing, -2.0f));
-				sphere->draw(shader_pbr);
+				//sphere->draw(shader_pbr);
 			}
 		}
 
@@ -250,8 +311,22 @@ int main(int argc, const char **argv)
 
 			sphere->setScale(0.5f);
 			sphere->setPosition(newPos);
-			sphere->draw(shader_pbr);
+			//sphere->draw(shader_pbr);
 		}
+
+		float cur_time = glfwGetTime();
+		float dt = cur_time - last_frame_time;
+		last_frame_time = cur_time;
+		static_shader.use();
+		glm::mat4 model = glm::mat4(1.0f);
+        model = glm::translate(model, glm::vec3(0.0f, 0.f, 0.0f)); // translate it down so it's at the center of the scene
+        model = glm::scale(model, glm::vec3(1.f, 1.f, 1.f));	// it's a bit too big for our scene, so scale it down
+        static_shader.setMat4("model", model);
+		static_shader.setMat4("projection", proj);
+		static_shader.setMat4("view", view_m);
+		static_shader.setVec3("viewPos", camera.Position);
+		static_model.update(dt);
+		static_model.Draw(static_shader);
 
 		glDepthFunc(GL_LEQUAL);
 		s_shader->use();
@@ -269,11 +344,10 @@ int main(int argc, const char **argv)
 		glDepthMask(GL_TRUE);
 
 		frame++;
-		float cur_time = glfwGetTime();
-		if (cur_time - start_time > 1.f)
+		if (cur_time - last_time > 1.f)
 		{
 			lable->setString(std::to_string(frame) + " fps");
-			start_time = cur_time;
+			last_time = cur_time;
 			frame = 0;
 		}
 

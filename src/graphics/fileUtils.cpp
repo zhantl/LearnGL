@@ -1,4 +1,4 @@
-#include<graphics/fileUtils.hpp>
+#include "FileUtils.hpp"
 
 FileUtils* FileUtils::fileUtils = nullptr;
 
@@ -7,6 +7,11 @@ FileUtils* FileUtils::getInstance()
     if(!fileUtils)
         fileUtils = new FileUtils;
     return fileUtils;
+}
+
+std::string FileUtils::readFile(const std::string& filepath)
+{
+	return this->readFile(filepath.c_str());
 }
 
 std::string FileUtils::readFile(const char *filepath)
@@ -27,15 +32,18 @@ std::string FileUtils::readFile(const char *filepath)
 	return fstream.str();
 }
 
+unsigned int FileUtils::loadTexture(const std::string& path, bool gamma /* = false */)
+{
+	return this->loadTexture(path.c_str());
+}
+
 unsigned int FileUtils::loadTexture(const char *path, bool gamma /* = false */)
 {
-	std::string filename = std::string(path);
-
 	unsigned int textureID;
 	glGenTextures(1, &textureID);
 
 	int width, height, channel;
-	unsigned char* data = stbi_load(filename.c_str(), &width, &height, &channel, 0);
+	unsigned char* data = stbi_load(path, &width, &height, &channel, 0);
 
 	if (data)
 	{

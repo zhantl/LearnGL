@@ -1,4 +1,4 @@
-#include "indexbuffer.hpp"
+#include "IndexBUffer.hpp"
 
 IndexBUffer::IndexBUffer(GLuint *data, GLsizei count)
 :m_count(count)

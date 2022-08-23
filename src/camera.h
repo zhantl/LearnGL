@@ -1,7 +1,7 @@
 #ifndef CAMERA_H
 #define CAMERA_H
 
-#include "graphics/event_dispatch.hpp"
+#include "graphics/EventDispatch.hpp"
 #include <GLFW/glfw3.h>
 #include <glad/glad.h>
 #include <glm/glm.hpp>
@@ -74,13 +74,13 @@ public:
 	{
 		auto key = *static_cast<int *>(event.getArgs());
 		float velocity = MovementSpeed * 0.033;
-		if (key == GLFW_KEY_W)
+		if (key == GLFW_KEY_W || key == GLFW_KEY_UP)
 			Position += Front * velocity;
-		if (key == GLFW_KEY_S)
+		if (key == GLFW_KEY_S || key == GLFW_KEY_DOWN)
 			Position -= Front * velocity;
-		if (key == GLFW_KEY_A)
+		if (key == GLFW_KEY_A || key == GLFW_KEY_LEFT)
 			Position -= Right * velocity;
-		if (key == GLFW_KEY_D)
+		if (key == GLFW_KEY_D || key == GLFW_KEY_RIGHT)
 			Position += Right * velocity;
 		std::cout << Position.x << " " << Position.y << "  " << Position.z << std::endl;
 	}

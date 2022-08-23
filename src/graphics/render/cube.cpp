@@ -1,4 +1,4 @@
-#include "cube.hpp"
+#include "Cube.hpp"
 
 Cube::Cube()
     : m_VAO(0),

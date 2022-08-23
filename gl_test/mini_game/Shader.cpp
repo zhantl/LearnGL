@@ -75,34 +75,34 @@ void Shader::setVec4(const std::string &name, float x, float y, float z, float w
 }
 
 // --------------------------------glm----------------------------------------
-void Shader::setVec2(const std::string &name, const glm::vec2 &value) const
+void Shader::setVec2(const std::string &name, const glm::vec2 &value, int count) const
 {
-	glUniform2fv(glGetUniformLocation(ID, name.c_str()), 1, glm::value_ptr(value));
+	glUniform2fv(glGetUniformLocation(ID, name.c_str()), count, glm::value_ptr(value));
 }
 
-void Shader::setVec3(const std::string &name, const glm::vec3 &value) const
+void Shader::setVec3(const std::string &name, const glm::vec3 &value, int count) const
 {
-	glUniform3fv(glGetUniformLocation(ID, name.c_str()), 1, glm::value_ptr(value));
+	glUniform3fv(glGetUniformLocation(ID, name.c_str()), count, glm::value_ptr(value));
 }
 
-void Shader::setVec4(const std::string &name, const glm::vec4 &value) const
+void Shader::setVec4(const std::string &name, const glm::vec4 &value, int count) const
 {
-	glUniform4fv(glGetUniformLocation(ID, name.c_str()), 1, glm::value_ptr(value));
+	glUniform4fv(glGetUniformLocation(ID, name.c_str()), count, glm::value_ptr(value));
 }
 
-void Shader::setMat2(const std::string &name, const glm::mat2 &mat) const
+void Shader::setMat2(const std::string &name, const glm::mat2 &mat, int count) const
 {
-	glUniformMatrix2fv(glGetUniformLocation(ID, name.c_str()), 1, GL_FALSE, glm::value_ptr(mat));
+	glUniformMatrix2fv(glGetUniformLocation(ID, name.c_str()), count, GL_FALSE, glm::value_ptr(mat));
 }
 
-void Shader::setMat3(const std::string &name, const glm::mat3 &mat) const
+void Shader::setMat3(const std::string &name, const glm::mat3 &mat, int count) const
 {
-	glUniformMatrix3fv(glGetUniformLocation(ID, name.c_str()), 1, GL_FALSE, glm::value_ptr(mat));
+	glUniformMatrix3fv(glGetUniformLocation(ID, name.c_str()), count, GL_FALSE, glm::value_ptr(mat));
 }
 
-void Shader::setMat4(const std::string &name, const glm::mat4 &mat) const
+void Shader::setMat4(const std::string &name, const glm::mat4 &mat, int count) const
 {
-	glUniformMatrix4fv(glGetUniformLocation(ID, name.c_str()), 1, GL_FALSE, glm::value_ptr(mat));
+	glUniformMatrix4fv(glGetUniformLocation(ID, name.c_str()), count, GL_FALSE, glm::value_ptr(mat));
 }
 
 void Shader::checkCompileErrors(GLuint Shader, std::string type)

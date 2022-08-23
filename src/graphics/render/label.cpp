@@ -1,4 +1,4 @@
-#include "label.hpp"
+#include "Label.hpp"
 
 using namespace ftgl;
 

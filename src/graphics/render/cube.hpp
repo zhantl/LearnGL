@@ -1,8 +1,8 @@
 #pragma once
 
-#include "node.hpp"
-#include "../texture/texture_base.hpp"
-#include "../texture/texture2d.hpp"
+#include "Node.hpp"
+#include "../texture/TextureBase.hpp"
+#include "../texture/Texture2D.hpp"
 
 class Cube: public Node
 {

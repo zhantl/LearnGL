@@ -1,4 +1,4 @@
-#include "node.hpp"
+#include "Node.hpp"
 
 Node::Node()
     : m_scale(1.0),

@@ -1,5 +1,5 @@
 #pragma once
-#include "texture_base.hpp"
+#include "TextureBase.hpp"
 
 class Texture2D : public TextureBase
 {

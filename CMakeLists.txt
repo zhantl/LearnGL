@@ -22,7 +22,7 @@ endif()
 include_directories("./include")
 
 set(SCR_FILE
-		src/camera.h
+		src/Camera.h
 		src/main.cpp
 	)
 source_group("src" FILES ${SCR_FILE})
@@ -36,22 +36,21 @@ source_group("src\\glad" FILES ${GLAD_FILE})
 file(GLOB STB_FILE src/stb_image/stb_image.cpp)
 source_group("src\\stb_image" FILES ${STB_FILE})
 
-set(GRAPHY_FILE
-		src/graphics/event_dispatch.hpp
-		src/graphics/event_dispatch.cpp
-        src/graphics/fileUtils.cpp
-        src/graphics/mesh.cpp
-        src/graphics/model.cpp
-        src/graphics/shader.cpp
-        src/graphics/window.cpp
+file(GLOB GRAPHY_FILE
+		src/graphics/*.cpp
+		src/graphics/*.hpp
 	)
 source_group("src\\graphics" FILES ${GRAPHY_FILE})
 
-set(BUFFER_FILE
-		src/graphics/buffers/framebuffer.hpp
-		src/graphics/buffers/framebuffer.cpp
-        src/graphics/buffers/indexbuffer.hpp
-        src/graphics/buffers/indexbuffer.cpp
+file(GLOB MODEL_FILE
+		src/graphics/model/*.cpp
+		src/graphics/model/*.hpp
+	)
+source_group("src\\graphics\\model" FILES ${MODEL_FILE})
+
+file(GLOB BUFFER_FILE
+		src/graphics/buffers/*.cpp
+		src/graphics/buffers/*.hpp
 	)
 source_group("src\\graphics\\buffers" FILES ${BUFFER_FILE})
 
@@ -71,7 +70,8 @@ source_group("src\\graphics\\texture" FILES ${TEXTURE_FILE})
 add_executable(${PROJECT_NAME} ${SCR_FILE} ${FT_GL_FILE}
                                 ${GLAD_FILE} ${STB_FILE}
                                 ${GRAPHY_FILE} ${BUFFER_FILE}
-                                ${RENDER_FILE}  ${TEXTURE_FILE})
+                                ${RENDER_FILE}  ${TEXTURE_FILE}
+                                ${MODEL_FILE})
 
 target_link_libraries(${PROJECT_NAME} freetype glfw assimp)
 

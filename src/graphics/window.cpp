@@ -1,6 +1,6 @@
 #include <glm/glm.hpp>
-#include <graphics/window.hpp>
-#include "event_dispatch.hpp"
+#include "EventDispatch.hpp"
+#include "Window.hpp"
 
 GLenum glCheckError_(const char *file, int line)
 {

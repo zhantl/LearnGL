@@ -1,4 +1,4 @@
-#include "sprite.hpp"
+#include "Sprite.hpp"
 
 Sprite::Sprite()
     : m_VAO(0),

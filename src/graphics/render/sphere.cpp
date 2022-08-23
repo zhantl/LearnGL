@@ -1,4 +1,4 @@
-#include "sphere.hpp"
+#include "Sphere.hpp"
 
 Sphere::Sphere()
     : m_VAO(0),

@@ -1,5 +1,5 @@
-#include "framebuffer.hpp"
 #include <iostream>
+#include "FrameBuffer.hpp"
 
 FrameBuffer::FrameBuffer(GLuint width, GLuint height)
     : m_fbo(0),

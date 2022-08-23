@@ -4,8 +4,8 @@
 #include <freetyp-gl/texture-atlas.h>
 #include <freetyp-gl/texture-font.h>
 
-#include "node.hpp"
-#include "../texture/texture2d.hpp"
+#include "Node.hpp"
+#include "../texture/Texture2D.hpp"
 
 class Label: public Node
 {

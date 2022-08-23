@@ -1,8 +1,8 @@
 #pragma once
 
 #include <glad/glad.h>
-#include <graphics/window.hpp>
-#include "../texture/texture_base.hpp"
+#include "../Window.hpp"
+#include "../texture/TextureBase.hpp"
 
 class FrameBuffer
 {
