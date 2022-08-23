@@ -70,7 +70,7 @@ void Label::init()
         indics[i + 4] = idx + 3;
         indics[i + 5] = idx + 0;
     }
-    m_IBO = new IndexBUffer(indics, BufferSize::RENDER_INDICES_SIZE);
+    m_IBO = new IndexBuffer(indics, BufferSize::RENDER_INDICES_SIZE);
 
     m_FTatlas = texture_atlas_new(512, 512, 1);
     m_FTfont = texture_font_new_from_file(m_FTatlas, 48, "res/font/fontthin.ttf");

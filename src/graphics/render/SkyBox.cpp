@@ -77,7 +77,7 @@ void SkyBox::init()
         4, 3, 2,  2, 7, 4,
         4, 7, 6,  6, 5, 4,
     };
-    m_IBO = new IndexBUffer(indics, 36);
+    m_IBO = new IndexBuffer(indics, 36);
 
     m_shader = new Shader("res/shader/sky_box.vs", "res/shader/sky_box.fs");
 }

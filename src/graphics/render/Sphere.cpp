@@ -100,7 +100,7 @@ void Sphere::init()
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
 
-    m_IBO = new IndexBUffer(&indices[0], (GLsizei)indices.size());
+    m_IBO = new IndexBuffer(&indices[0], (GLsizei)indices.size());
 }
 
 void Sphere::setTexture(const std::string &img_path)

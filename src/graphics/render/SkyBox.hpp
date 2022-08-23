@@ -20,7 +20,7 @@ public:
 private:
     GLuint m_VAO;
     GLuint m_VBO;
-    IndexBUffer *m_IBO;
+    IndexBuffer *m_IBO;
     TextureCube *m_texture;
     Shader *m_shader;
 };

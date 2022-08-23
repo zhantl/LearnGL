@@ -26,7 +26,7 @@ private:
 private:
     GLuint m_VAO;
     GLuint m_VBO;
-    IndexBUffer *m_IBO;
+    IndexBuffer *m_IBO;
     GLuint m_idxCount;
     VertexData m_vertexDatas[BufferSize::RENDER_MAX_SPRITES];
 

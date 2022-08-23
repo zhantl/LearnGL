@@ -55,7 +55,7 @@ void Sprite::init()
     glBindVertexArray(0);
 
     GLuint indics[6] = {0, 1, 2, 2, 3, 0};
-    m_IBO = new IndexBUffer(indics, 6);
+    m_IBO = new IndexBuffer(indics, 6);
 
     m_vertexDatas[0].uv = glm::vec2(0, 0);
     m_vertexDatas[1].uv = glm::vec2(0, 1);

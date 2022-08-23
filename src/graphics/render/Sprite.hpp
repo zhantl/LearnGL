@@ -18,7 +18,7 @@ public:
 private:
     GLuint m_VAO;
     GLuint m_VBO;
-    IndexBUffer *m_IBO;
+    IndexBuffer *m_IBO;
     Texture2D *m_texture;
     VertexData m_vertexDatas[4];
 };
