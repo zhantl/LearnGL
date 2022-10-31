@@ -60,7 +60,6 @@ void Mesh::Draw(Shader shader)
     unsigned int diffuseNr = 1;
     unsigned int specularNr = 1;
     unsigned int normalNr = 1;
-    unsigned int heightNr = 1;
 
     for (unsigned int i = 0; i < mTextures.size(); i++)
     {
@@ -72,8 +71,6 @@ void Mesh::Draw(Shader shader)
             number = to_string(specularNr++);
         else if (name == "texture_normal")
             number = to_string(normalNr++);
-        else if (name == "texture_heigh")
-            number = to_string(heightNr++);
 
         glActiveTexture(GL_TEXTURE0 + i);
         shader.setInt(name + number, i);

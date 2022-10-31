@@ -7,9 +7,12 @@ layout(location = 4) in vec3 aBitangent;
 layout(location = 5) in ivec4 aBoneIDs;
 layout(location = 6) in vec4 aBoneWeights;
 
-out vec2 TexCoords;
-out vec3 FragPos;
-out vec3 Normal;
+out VS_OUT {
+    vec3 FragPos;
+    vec2 TexCoords;
+	vec3 Normal;
+	mat3 TBN;
+} vs_out;
 
 uniform mat4 model;
 uniform mat4 view;
@@ -24,9 +27,22 @@ void main()
 	    boneTransform += finalTransforms[aBoneIDs[1]] * aBoneWeights[1];
 		boneTransform += finalTransforms[aBoneIDs[2]] * aBoneWeights[2];
 		boneTransform += finalTransforms[aBoneIDs[3]] * aBoneWeights[3];
-	vec4 totalPosition = boneTransform * vec4(aPos, 1.f);
-	Normal = mat3(transpose(inverse(model))) * aNormal;
-	TexCoords = aTexCoord;
-	FragPos = vec3(model * totalPosition);
-	gl_Position = projection * view * model * totalPosition;
+//	vec4 totalPosition = boneTransform * vec4(aPos, 1.f);
+//	FragPos = vec3(model * totalPosition);
+//	gl_Position = projection * view * model * totalPosition;
+
+
+    mat3 normalMatrix = transpose(inverse(mat3(model)));
+    vec3 T = normalize(normalMatrix * aTangent);
+    vec3 B = normalize(normalMatrix * aBitangent);
+    vec3 N = normalize(normalMatrix * aNormal);    
+    
+    mat3 TBN = mat3(T, B, N);  
+
+    vs_out.FragPos = vec3(model * vec4(aPos, 1.0));   
+    vs_out.TexCoords = aTexCoord;
+	vs_out.Normal = N;
+	vs_out.TBN = TBN;
+
+	gl_Position = projection * view * model * vec4(aPos, 1.0);
 }

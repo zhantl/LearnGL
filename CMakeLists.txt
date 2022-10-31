@@ -27,42 +27,83 @@ set(SCR_FILE
 	)
 source_group("src" FILES ${SCR_FILE})
 
-file(GLOB FT_GL_FILE src/freetype-gl/*.c)
+set(FT_GL_FILE 
+    src/freetype-gl/distance-field.c
+    src/freetype-gl/edtaa3func.c
+    src/freetype-gl/platform.c
+    src/freetype-gl/texture-atlas.c
+    src/freetype-gl/texture-font.c
+    src/freetype-gl/utf8-utils.c
+    src/freetype-gl/vector.c
+    )
 source_group("src\\freetype-gl" FILES ${FT_GL_FILE})
 
-file(GLOB GLAD_FILE src/glad/glad.c)
+set(GLAD_FILE 
+    src/glad/glad.c
+    )
 source_group("src\\glad" FILES ${GLAD_FILE})
 
-file(GLOB STB_FILE src/stb_image/stb_image.cpp)
+set(STB_FILE 
+    src/stb_image/stb_image.cpp
+    )
 source_group("src\\stb_image" FILES ${STB_FILE})
 
-file(GLOB GRAPHY_FILE
-		src/graphics/*.cpp
-		src/graphics/*.hpp
+set(GRAPHY_FILE
+		src/graphics/EventDispatch.cpp
+		src/graphics/EventDispatch.hpp
+		src/graphics/FileUtils.cpp
+		src/graphics/FileUtils.hpp
+		src/graphics/Shader.cpp
+		src/graphics/Shader.hpp
+		src/graphics/Window.cpp
+		src/graphics/Window.hpp
 	)
 source_group("src\\graphics" FILES ${GRAPHY_FILE})
 
-file(GLOB MODEL_FILE
-		src/graphics/model/*.cpp
-		src/graphics/model/*.hpp
+set(MODEL_FILE
+        src/graphics/model/AssimpHelper.hpp
+		src/graphics/model/Mesh.cpp
+		src/graphics/model/Mesh.hpp
+		src/graphics/model/Model.cpp
+		src/graphics/model/Model.hpp
+		src/graphics/model/ModelAnimation.cpp
+		src/graphics/model/ModelAnimation.hpp
 	)
 source_group("src\\graphics\\model" FILES ${MODEL_FILE})
 
-file(GLOB BUFFER_FILE
-		src/graphics/buffers/*.cpp
-		src/graphics/buffers/*.hpp
+set(BUFFER_FILE
+		src/graphics/buffers/FrameBuffer.cpp
+		src/graphics/buffers/FrameBuffer.hpp
+		src/graphics/buffers/IndexBuffer.cpp
+		src/graphics/buffers/IndexBuffer.hpp
 	)
 source_group("src\\graphics\\buffers" FILES ${BUFFER_FILE})
 
-file(GLOB RENDER_FILE 
-        src/graphics/render/*.cpp
-        src/graphics/render/*.hpp
+set(RENDER_FILE 
+        src/graphics/render/Cube.cpp
+        src/graphics/render/Cube.hpp
+        src/graphics/render/Label.cpp
+        src/graphics/render/Label.hpp
+        src/graphics/render/Node.cpp
+        src/graphics/render/Node.hpp
+        src/graphics/render/RenderToCube.cpp
+        src/graphics/render/RenderToCube.hpp
+        src/graphics/render/SkyBox.cpp
+        src/graphics/render/SkyBox.hpp
+        src/graphics/render/Sphere.cpp
+        src/graphics/render/Sphere.hpp
+        src/graphics/render/Sprite.cpp
+        src/graphics/render/Sprite.hpp
         )
 source_group("src\\graphics\\render" FILES ${RENDER_FILE})
 
-file(GLOB TEXTURE_FILE 
-        src/graphics/texture/*.cpp
-        src/graphics/texture/*.hpp
+set(TEXTURE_FILE 
+        src/graphics/texture/Texture2D.cpp
+        src/graphics/texture/Texture2D.hpp
+        src/graphics/texture/TextureBase.cpp
+        src/graphics/texture/TextureBase.hpp
+        src/graphics/texture/TextureCube.cpp
+        src/graphics/texture/TextureCube.hpp
         )
 source_group("src\\graphics\\texture" FILES ${TEXTURE_FILE})
 

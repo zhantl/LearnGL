@@ -40,13 +40,8 @@ void Model::playAnimation(const std::string name)
 void Model::Draw(Shader shader)
 {   
     shader.use();
-    if (mAnimator->isPlaying())
-    {
-        auto finalTransform = mAnimator->getFinalTranforms();
-		shader.setMat4("finalTransforms", finalTransform[0], finalTransform.size());
-        //for (int i = 0; i < finalTransform.size(); ++i)
-        //    shader.setMat4("finalTransforms[" + std::to_string(i) + "]", finalTransform[i]);
-    }
+    auto finalTransform = mAnimator->getFinalTranforms();
+	shader.setMat4("finalTransforms", finalTransform[0], finalTransform.size());
     for (unsigned int i = 0; i < meshes.size(); i++)
     {
         meshes[i]->Draw(shader);
@@ -121,9 +116,6 @@ Mesh* Model::loadMesh(aiMesh *aiMesh, const aiScene *scene, int &boneID)
     vector<Texture> normalMaps = loadMaterialTextures(material, aiTextureType_HEIGHT, "texture_normal");
     textures->insert(textures->end(), normalMaps.begin(), normalMaps.end());
 
-    vector<Texture> heightMaps = loadMaterialTextures(material, aiTextureType_AMBIENT, "texture_height");
-    textures->insert(textures->end(), heightMaps.begin(), heightMaps.end());
-
 	mesh->setupMesh();
     return mesh;
 }
@@ -158,7 +150,7 @@ vector<Texture> Model::loadMaterialTextures(aiMaterial *material, aiTextureType 
             Texture texture;
             texture.id = FileUtils::getInstance()->loadTexture(tex_path);
             texture.type = typeName;
-            texture.path = tex_path;
+            texture.path = str.C_Str();
             textures.push_back(texture);
             texture_loads.push_back(texture);
         }

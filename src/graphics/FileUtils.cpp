@@ -41,17 +41,17 @@ std::string FileUtils::readFile(const char *filepath)
 	return fstream.str();
 }
 
-unsigned int FileUtils::loadTexture(const std::string& path, bool gamma /* = false */)
+unsigned int FileUtils::loadTexture(const std::string& path, bool flipy /* = false */)
 {
 	return this->loadTexture(path.c_str());
 }
 
-unsigned int FileUtils::loadTexture(const char *path, bool gamma /* = false */)
+unsigned int FileUtils::loadTexture(const char *path, bool flipy /* = false */)
 {
 	unsigned int textureID;
 	glGenTextures(1, &textureID);
-
 	int width, height, channel;
+	stbi_set_flip_vertically_on_load(flipy);
 	unsigned char* data = stbi_load(path, &width, &height, &channel, 0);
 
 	if (data)

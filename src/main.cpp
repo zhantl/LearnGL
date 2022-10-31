@@ -182,10 +182,10 @@ int main(int argc, const char **argv)
 	// lights
 	// ------
 	glm::vec3 lightPositions[] = {
-		glm::vec3(-10.0f, 10.0f, 10.0f),
-		glm::vec3(10.0f, 10.0f, 10.0f),
-		glm::vec3(-10.0f, -10.0f, 10.0f),
-		glm::vec3(10.0f, -10.0f, 10.0f),
+		glm::vec3(-4.0f, 4.0f, -10.0f),
+		glm::vec3(4.0f, 4.0f, -10.0f),
+		glm::vec3(-4.0f, -4.0f, -10.0f),
+		glm::vec3(4.0f, -4.0f, -10.0f),
 	};
 	glm::vec3 lightColors[] = {
 		glm::vec3(300.0f, 300.0f, 300.0f),
@@ -197,13 +197,13 @@ int main(int argc, const char **argv)
 
 	//模型
     glm::vec3 pointLightPositions[] = {
-        glm::vec3( 0.7f,  0.2f,  2.0f),
+        glm::vec3( 0.7f,  10.2f,  2.0f),
         glm::vec3( 2.3f, -3.3f, -4.0f),
         glm::vec3(-4.0f,  2.0f, -12.0f),
         glm::vec3( 0.0f,  0.0f, -3.0f)
     };
-	auto static_model = Model("res/objects/vampire/dancing_vampire.dae");
-	static_model.playAnimation("");
+	auto static_model = Model("res/objects/nanosuit/nanosuit.obj");
+	// static_model.playAnimation("");
 	Shader static_shader("res/shader/model_shader.vs", "res/shader/model_shader.fs");
 	static_shader.use();
     static_shader.setVec3("dirLight.direction", -0.2f, -1.0f, -0.3f);
@@ -211,7 +211,7 @@ int main(int argc, const char **argv)
     static_shader.setVec3("dirLight.diffuse", 0.4f, 0.4f, 0.4f);
     static_shader.setVec3("dirLight.specular", 0.5f, 0.5f, 0.5f);
     // point light 1
-    static_shader.setVec3("pointLights[0].position", pointLightPositions[0]);
+    static_shader.setVec3("pointLights[0].position", lightPositions[0]);
     static_shader.setVec3("pointLights[0].ambient", 0.05f, 0.05f, 0.05f);
     static_shader.setVec3("pointLights[0].diffuse", 0.8f, 0.8f, 0.8f);
     static_shader.setVec3("pointLights[0].specular", 1.0f, 1.0f, 1.0f);
@@ -219,7 +219,7 @@ int main(int argc, const char **argv)
     static_shader.setFloat("pointLights[0].linear", 0.09f);
     static_shader.setFloat("pointLights[0].quadratic", 0.032f);
     // point light 2
-    static_shader.setVec3("pointLights[1].position", pointLightPositions[1]);
+    static_shader.setVec3("pointLights[1].position", lightPositions[1]);
     static_shader.setVec3("pointLights[1].ambient", 0.05f, 0.05f, 0.05f);
     static_shader.setVec3("pointLights[1].diffuse", 0.8f, 0.8f, 0.8f);
     static_shader.setVec3("pointLights[1].specular", 1.0f, 1.0f, 1.0f);
@@ -227,7 +227,7 @@ int main(int argc, const char **argv)
     static_shader.setFloat("pointLights[1].linear", 0.09f);
     static_shader.setFloat("pointLights[1].quadratic", 0.032f);
     // point light 3
-    static_shader.setVec3("pointLights[2].position", pointLightPositions[2]);
+    static_shader.setVec3("pointLights[2].position", lightPositions[2]);
     static_shader.setVec3("pointLights[2].ambient", 0.05f, 0.05f, 0.05f);
     static_shader.setVec3("pointLights[2].diffuse", 0.8f, 0.8f, 0.8f);
     static_shader.setVec3("pointLights[2].specular", 1.0f, 1.0f, 1.0f);
@@ -235,7 +235,7 @@ int main(int argc, const char **argv)
     static_shader.setFloat("pointLights[2].linear", 0.09f);
     static_shader.setFloat("pointLights[2].quadratic", 0.032f);
     // point light 4
-    static_shader.setVec3("pointLights[3].position", pointLightPositions[3]);
+    static_shader.setVec3("pointLights[3].position", lightPositions[3]);
     static_shader.setVec3("pointLights[3].ambient", 0.05f, 0.05f, 0.05f);
     static_shader.setVec3("pointLights[3].diffuse", 0.8f, 0.8f, 0.8f);
     static_shader.setVec3("pointLights[3].specular", 1.0f, 1.0f, 1.0f);
@@ -312,20 +312,28 @@ int main(int argc, const char **argv)
 
 			sphere->setScale(0.5f);
 			sphere->setPosition(newPos);
-			//sphere->draw(shader_pbr);
+			sphere->draw(shader_pbr);
 		}
 
 		float cur_time = glfwGetTime();
 		float dt = cur_time - last_frame_time;
 		last_frame_time = cur_time;
-		static_shader.use();
+		
 		glm::mat4 model = glm::mat4(1.0f);
-        model = glm::translate(model, glm::vec3(0.0f, 0.f, 0.0f)); // translate it down so it's at the center of the scene
+        model = glm::translate(model, glm::vec3(0.0f, -10.f, -10.f)); // translate it down so it's at the center of the scene
         model = glm::scale(model, glm::vec3(1.f, 1.f, 1.f));	// it's a bit too big for our scene, so scale it down
+
+		glm::mat4 trans = glm::mat4(1.0f);
+		trans[1].y = -1;
+		//model *= trans;
+
+		static_shader.use();
         static_shader.setMat4("model", model);
 		static_shader.setMat4("projection", proj);
 		static_shader.setMat4("view", view_m);
 		static_shader.setVec3("viewPos", camera.Position);
+		static_shader.setVec3("spotLight.position", camera.Position);
+		static_shader.setVec3("spotLight.direction", camera.Front);
 		static_model.update(dt);
 		static_model.Draw(static_shader);
 
@@ -333,13 +341,15 @@ int main(int argc, const char **argv)
 		s_shader->use();
 		s_shader->setMat4("projection", proj);
 		s_shader->setMat4("view", view_m);
-		skyBox->draw();
+		//skyBox->draw();
 
 		// ui render
-		glDepthMask(GL_FALSE);
+		glDepthMask(GL_FALSE);                                                                                                                                                                                                                                                                                                                                                                                              
 
-		// sprite->setTexture(brdf_tex);
-		// sprite->draw(shader_quad);
+		//shader_quad.use();
+		//shader_quad.setMat4("view", view_m);
+		//sprite->setTexture(brdf_tex);
+		//sprite->draw(shader_quad);
 		lable->draw(shader_lable);
 
 		glDepthMask(GL_TRUE);
