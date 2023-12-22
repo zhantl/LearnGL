@@ -13,11 +13,27 @@
 
 class Animator;
 
-class BoneInfo
+struct BoneInfo
 {
-public:
 	glm::mat4 mOffsetTransform;
 	int boneID;
+};
+
+struct AssimpNodeData
+{
+	glm::mat4 transform;
+	std::string name;
+	std::vector<AssimpNodeData*> children;
+
+	~AssimpNodeData()
+	{
+		for (auto node : children)
+		{
+			delete node;
+		}
+		children.clear();
+		children.shrink_to_fit();
+	}
 };
 
 class Model
@@ -29,16 +45,19 @@ public:
 	void Draw(Shader shader);
 	void playAnimation(const std::string name);
 	std::map<std::string, BoneInfo> &getBoneMap() { return mBoneMapping; }
+	const AssimpNodeData* getRootNode() { return mRootNode; }
 private:
 	void loadModel();
-	void processNode(aiNode *node, const aiScene *scene);
+	void processNode(const aiScene* scene, aiNode *node, AssimpNodeData* dest);
 	Mesh* loadMesh(aiMesh *mesh, const aiScene *scene, int &boneID);
 	vector<Texture> loadMaterialTextures(aiMaterial *material, aiTextureType type, string typeName);
 
 	std::string mPath;
-	std::map<std::string, BoneInfo> mBoneMapping;
-	Animator *mAnimator;
-	vector<Texture> texture_loads;
-	vector<Mesh *> meshes;
+	vector<Texture> mTextures;
+	vector<Mesh*> mMeshes;
 	bool gammaCorrection;
+
+	AssimpNodeData* mRootNode;
+	std::map<std::string, BoneInfo> mBoneMapping;
+	Animator* mAnimator;
 };

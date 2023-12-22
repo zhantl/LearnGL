@@ -138,33 +138,36 @@ glm::mat4 Bone::InterpolateScale(float animationTime)
 }
 
 
-Animation::Animation(aiNode* rootNode, aiAnimation *animation, Model* model)
+Animation::Animation(aiAnimation *animation, Model* model)
 {
     mName = animation->mName.data;
     mDuration = animation->mDuration;
     mTicksPerSecond = animation->mTicksPerSecond;
-    ReadHeirarchyData(mRootNode, rootNode);
-    readMissingBones(animation, model);
+    readBonesFrame(animation, model);
 }
 
 Animation::~Animation()
 {
+    for (auto bone : mBones)
+    {
+        delete bone;
+    }
     mBones.clear();
     mBones.shrink_to_fit();
 }
 
 Bone *Animation::findBone(const std::string &name)
 {
-	for (auto& bone : mBones)
+	for (auto bone : mBones)
 	{
-		if (bone.getBoneName() == name)
-			return &bone;
+		if (bone->getBoneName() == name)
+			return bone;
 	}
     return nullptr;
 }
 
 
-void Animation::readMissingBones(const aiAnimation *animation, Model *model)
+void Animation::readBonesFrame(const aiAnimation *animation, Model *model)
 {
     auto &boneInfoMap = model->getBoneMap();
     int boneId = boneInfoMap.size();
@@ -178,25 +181,9 @@ void Animation::readMissingBones(const aiAnimation *animation, Model *model)
             boneInfoMap[boneName].boneID = boneId;
             boneId++;
         }
-        mBones.push_back(Bone(boneName, boneInfoMap[boneName].boneID, channel));
+        mBones.push_back(new Bone(boneName, boneInfoMap[boneName].boneID, channel));
     }
 }
-
-void Animation::ReadHeirarchyData(AssimpNodeData &dest, const aiNode *node)
-{
-    assert(node);
-    dest.name = node->mName.data;
-    dest.transform = AssimpHelper::convertMat4ToGlm(node->mTransformation);
-
-    dest.children.reserve(node->mNumChildren);
-    for (int i = 0; i < node->mNumChildren; ++i)
-    {
-        AssimpNodeData newData;
-        ReadHeirarchyData(newData, node->mChildren[i]);
-        dest.children.push_back(newData);
-    }
-}
-
 
 Animator::Animator(const aiScene* scene, Model* model)
 {
@@ -206,7 +193,7 @@ Animator::Animator(const aiScene* scene, Model* model)
     mAnimations.reserve(scene->mNumAnimations);
     for (int i = 0; i < scene->mNumAnimations; ++i)
     {
-        mAnimations.push_back(new Animation(scene->mRootNode, scene->mAnimations[i], model));
+        mAnimations.push_back(new Animation(scene->mAnimations[i], model));
     }
     mFinalTransforms.reserve(MAX_BONES);
     for (int i = 0; i < MAX_BONES; ++i)
@@ -235,7 +222,7 @@ void Animator::updateAnimation(float dt)
     {
         mCurrentTime += mCurAnimation->getTicksPerSecond() * dt;
         mCurrentTime = fmod(mCurrentTime, mCurAnimation->getDuration());
-        calcBoneTransform(&mCurAnimation->getRootNode(), glm::mat4(1.f));
+        calcBoneTransform(mModel->getRootNode(), glm::mat4(1.f));
     }
 }
 
@@ -276,7 +263,7 @@ void Animator::calcBoneTransform(const AssimpNodeData* node, const glm::mat4& pa
 
     for (auto &child : node->children)
     {
-        calcBoneTransform(&child, globalTransform);
+        calcBoneTransform(child, globalTransform);
     }
 }
 

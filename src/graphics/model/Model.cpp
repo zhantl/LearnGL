@@ -2,7 +2,8 @@
 
 Model::Model(string const &path, bool gamma) : 
     gammaCorrection(gamma),
-    mAnimator(nullptr)
+    mAnimator(nullptr),
+    mRootNode(nullptr)
 {
     mPath = path;
     this->loadModel();
@@ -12,18 +13,20 @@ Model::~Model()
 {
 	delete mAnimator;
 	mAnimator = nullptr;
-    for (auto mesh : meshes)
+    for (auto mesh : mMeshes)
     {
         delete mesh;
     }
-    meshes.clear();
-    meshes.shrink_to_fit();
-    for (auto texture: texture_loads)
+    mMeshes.clear();
+    mMeshes.shrink_to_fit();
+    for (auto texture: mTextures)
     {
         glDeleteTextures(1, &texture.id);
     }
-    texture_loads.clear();
-    texture_loads.shrink_to_fit();
+    delete mRootNode;
+    mRootNode = nullptr;
+    mTextures.clear();
+    mTextures.shrink_to_fit();
     mBoneMapping.clear();
 }
 
@@ -42,9 +45,9 @@ void Model::Draw(Shader shader)
     shader.use();
     auto finalTransform = mAnimator->getFinalTranforms();
 	shader.setMat4("finalTransforms", finalTransform[0], finalTransform.size());
-    for (unsigned int i = 0; i < meshes.size(); i++)
+    for (unsigned int i = 0; i < mMeshes.size(); i++)
     {
-        meshes[i]->Draw(shader);
+        mMeshes[i]->Draw(shader);
     }
 }
 
@@ -57,22 +60,28 @@ void Model::loadModel()
         cout << "ERROR::ASSIMP:: " << importer.GetErrorString() << endl;
         return;
     }
-    this->processNode(scene->mRootNode, scene);
+    mRootNode = new AssimpNodeData();
+    this->processNode(scene, scene->mRootNode, mRootNode);
     mAnimator = new Animator(scene, this);
 }
 
-void Model::processNode(aiNode *node, const aiScene *scene)
+void Model::processNode(const aiScene* scene, aiNode* node, AssimpNodeData* dest)
 {
     int boneId = -1;
     for (unsigned int i = 0; i < node->mNumMeshes; i++)
     {
         aiMesh *mesh = scene->mMeshes[node->mMeshes[i]];
-        meshes.push_back(loadMesh(mesh, scene, boneId));
+        mMeshes.push_back(loadMesh(mesh, scene, boneId));
     }
 
+    dest->name = node->mName.data;
+    dest->transform = AssimpHelper::convertMat4ToGlm(node->mTransformation);
+    dest->children.reserve(node->mNumChildren);
     for (unsigned int i = 0; i < node->mNumChildren; i++)
     {
-        processNode(node->mChildren[i], scene);
+        auto child = new AssimpNodeData();
+        processNode(scene, node->mChildren[i], child);
+        dest->children.push_back(child);
     }
 }
 
@@ -135,11 +144,11 @@ vector<Texture> Model::loadMaterialTextures(aiMaterial *material, aiTextureType 
         material->GetTexture(type, i, &str);
 
         bool skip = false;
-        for (unsigned int j = 0; j < texture_loads.size(); j++)
+        for (unsigned int j = 0; j < mTextures.size(); j++)
         {
-            if (strcmp(texture_loads[j].path.data(), str.C_Str()) == 0)
+            if (strcmp(mTextures[j].path.data(), str.C_Str()) == 0)
             {
-                textures.push_back(texture_loads[j]);
+                textures.push_back(mTextures[j]);
                 skip = true;
                 break;
             }
@@ -152,7 +161,7 @@ vector<Texture> Model::loadMaterialTextures(aiMaterial *material, aiTextureType 
             texture.type = typeName;
             texture.path = str.C_Str();
             textures.push_back(texture);
-            texture_loads.push_back(texture);
+            mTextures.push_back(texture);
         }
     }
     return textures;

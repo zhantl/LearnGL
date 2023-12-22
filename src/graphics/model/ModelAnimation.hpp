@@ -13,6 +13,7 @@
 using namespace std;
 
 class Model;
+struct AssimpNodeData;
 
 struct PositionFrame
 {
@@ -64,40 +65,24 @@ private:
 	unsigned int mID;
 };
 
-struct AssimpNodeData
-{
-	glm::mat4 transform;
-	std::string name;
-	std::vector<AssimpNodeData> children;
-
-	~AssimpNodeData()
-	{
-		children.clear();
-		children.shrink_to_fit();
-	}
-};
-
 class Animation
 {
 public:
 	Animation() = default;
 	~Animation();
-	Animation(aiNode* rootNode, aiAnimation *animation, Model *model);
+	Animation(aiAnimation *animation, Model *model);
 	Bone *findBone(const std::string &name);
 	const std::string& getName() { return mName; }
 	float getTicksPerSecond() { return mTicksPerSecond; }
 	float getDuration() { return mDuration; }
-	const AssimpNodeData &getRootNode() { return mRootNode; }
 
 private:
-	void readMissingBones(const aiAnimation *animation, Model *model);
-	void ReadHeirarchyData(AssimpNodeData &dest, const aiNode *node);
+	void readBonesFrame(const aiAnimation *animation, Model *model);
 
 	std::string mName;
 	float mDuration;
 	unsigned int mTicksPerSecond;
-	std::vector<Bone> mBones;
-	AssimpNodeData mRootNode;
+	std::vector<Bone*> mBones;
 };
 
 class Animator
@@ -113,7 +98,7 @@ public:
 private:
 	vector<glm::mat4> mFinalTransforms;
 	vector<Animation*> mAnimations;
-	Animation *mCurAnimation;
-	Model *mModel;
+	Animation* mCurAnimation;
+	Model* mModel;
 	float mCurrentTime;
 };

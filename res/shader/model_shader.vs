@@ -27,11 +27,7 @@ void main()
 	    boneTransform += finalTransforms[aBoneIDs[1]] * aBoneWeights[1];
 		boneTransform += finalTransforms[aBoneIDs[2]] * aBoneWeights[2];
 		boneTransform += finalTransforms[aBoneIDs[3]] * aBoneWeights[3];
-//	vec4 totalPosition = boneTransform * vec4(aPos, 1.f);
-//	FragPos = vec3(model * totalPosition);
-//	gl_Position = projection * view * model * totalPosition;
-
-
+	vec4 totalPosition = boneTransform * vec4(aPos, 1.f);
     mat3 normalMatrix = transpose(inverse(mat3(model)));
     vec3 T = normalize(normalMatrix * aTangent);
     vec3 B = normalize(normalMatrix * aBitangent);
@@ -39,10 +35,10 @@ void main()
     
     mat3 TBN = mat3(T, B, N);  
 
-    vs_out.FragPos = vec3(model * vec4(aPos, 1.0));   
+    vs_out.FragPos = vec3(model * totalPosition); //vec3(model * vec4(aPos, 1.0));   
     vs_out.TexCoords = aTexCoord;
 	vs_out.Normal = N;
 	vs_out.TBN = TBN;
 
-	gl_Position = projection * view * model * vec4(aPos, 1.0);
+	gl_Position = projection * view * model * totalPosition; //vec4(aPos, 1.0);
 }

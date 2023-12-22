@@ -202,8 +202,8 @@ int main(int argc, const char **argv)
         glm::vec3(-4.0f,  2.0f, -12.0f),
         glm::vec3( 0.0f,  0.0f, -3.0f)
     };
-	auto static_model = Model("res/objects/nanosuit/nanosuit.obj");
-	// static_model.playAnimation("");
+	auto static_model = Model("res/objects/vampire/dancing_vampire.dae");
+	static_model.playAnimation("");
 	Shader static_shader("res/shader/model_shader.vs", "res/shader/model_shader.fs");
 	static_shader.use();
     static_shader.setVec3("dirLight.direction", -0.2f, -1.0f, -0.3f);
@@ -312,7 +312,7 @@ int main(int argc, const char **argv)
 
 			sphere->setScale(0.5f);
 			sphere->setPosition(newPos);
-			sphere->draw(shader_pbr);
+			//sphere->draw(shader_pbr);
 		}
 
 		float cur_time = glfwGetTime();
@@ -320,8 +320,8 @@ int main(int argc, const char **argv)
 		last_frame_time = cur_time;
 		
 		glm::mat4 model = glm::mat4(1.0f);
-        model = glm::translate(model, glm::vec3(0.0f, -10.f, -10.f)); // translate it down so it's at the center of the scene
-        model = glm::scale(model, glm::vec3(1.f, 1.f, 1.f));	// it's a bit too big for our scene, so scale it down
+        model = glm::translate(model, glm::vec3(0.0f, -0.4f, -0.5f)); // translate it down so it's at the center of the scene
+        model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));	// it's a bit too big for our scene, so scale it down
 
 		glm::mat4 trans = glm::mat4(1.0f);
 		trans[1].y = -1;
@@ -341,7 +341,7 @@ int main(int argc, const char **argv)
 		s_shader->use();
 		s_shader->setMat4("projection", proj);
 		s_shader->setMat4("view", view_m);
-		//skyBox->draw();
+		skyBox->draw();
 
 		// ui render
 		glDepthMask(GL_FALSE);                                                                                                                                                                                                                                                                                                                                                                                              
